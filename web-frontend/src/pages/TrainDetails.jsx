@@ -18,9 +18,9 @@ export default function TrainDetails() {
   const [alertTime, setAlertTime] = useState(15);
   
   const [liveData, setLiveData] = useState(null);
-  const [loadingLive, setLoadingLive] = useState(true);
   const [liveError, setLiveError] = useState(null);
   const isMountedRef = useRef(true);
+  const isFetchingRef = useRef(false);
 
   // Look up demo fallback train if available
   const cleanTrainNum = String(train?.trainNumber || '').trim();
@@ -32,17 +32,31 @@ export default function TrainDetails() {
     : (demoFallback?.stations || train?.stations || []);
 
   const [displayStations, setDisplayStations] = useState(() => processStationDistances(initialStationsRaw));
+  const displayStationsRef = useRef(displayStations);
+  displayStationsRef.current = displayStations;
+
+  const [isLoading, setIsLoading] = useState(!initialStationsRaw.length);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
   const [selectedDestinationIndex, setSelectedDestinationIndex] = useState(() => {
     return initialStationsRaw.length > 0 ? initialStationsRaw.length - 1 : 0;
   });
 
-  const fetchLiveData = useCallback(async () => {
-    if (!train?.trainNumber) return;
+  const fetchLiveData = useCallback(async (isManual = false) => {
+    if (!cleanTrainNum) return;
+    if (isFetchingRef.current) return;
+    isFetchingRef.current = true;
+
+    const hasExistingData = displayStationsRef.current.length > 0;
+    if (hasExistingData) {
+      setIsRefreshing(true);
+    } else {
+      setIsLoading(true);
+    }
+    setLiveError(null);
+
     try {
-      setLoadingLive(true);
-      setLiveError(null);
-      
-      const liveResult = await fetchLiveTrainData(train.trainNumber, displayStations);
+      const liveResult = await fetchLiveTrainData(cleanTrainNum, displayStationsRef.current, isManual);
       if (!isMountedRef.current) return;
 
       if (liveResult) {
@@ -53,7 +67,7 @@ export default function TrainDetails() {
 
           // Preserve currently selected destination station across live data refreshes
           setSelectedDestinationIndex(prevIdx => {
-            const currentSelected = displayStations[prevIdx];
+            const currentSelected = displayStationsRef.current[prevIdx];
             if (currentSelected) {
               const matchIdx = processed.findIndex(s => 
                 (s.code && s.code === currentSelected.code) ||
@@ -83,19 +97,32 @@ export default function TrainDetails() {
         return processed;
       });
     } finally {
-      if (isMountedRef.current) setLoadingLive(false);
+      isFetchingRef.current = false;
+      if (isMountedRef.current) {
+        setIsLoading(false);
+        setIsRefreshing(false);
+      }
     }
-  }, [train, displayStations, demoFallback]);
+  }, [cleanTrainNum, demoFallback, train]);
 
   useEffect(() => {
     isMountedRef.current = true;
-    if (train) {
-      fetchLiveData();
+    if (cleanTrainNum) {
+      fetchLiveData(false);
     }
+
+    // Background polling every 60 seconds with proper cleanup
+    const intervalId = setInterval(() => {
+      if (isMountedRef.current) {
+        fetchLiveData(false);
+      }
+    }, 60000);
+
     return () => {
       isMountedRef.current = false;
+      clearInterval(intervalId);
     };
-  }, [train, fetchLiveData]);
+  }, [cleanTrainNum, fetchLiveData]);
 
 
   const formatTime = (isoString) => formatTimeWithContext(isoString);
@@ -135,59 +162,57 @@ export default function TrainDetails() {
     });
   };
 
-  // Determine current train location
+  // Determine current train location optimistically (preserving state across refreshes)
   let displayLocation = 'Live unavailable';
   let displayNextHalt = 'N/A';
   let isApproximateDistance = false;
   
-  if (!loadingLive) {
-    if (liveData && !liveError) {
-      if (liveData.currentLocationName) {
-        displayLocation = liveData.currentLocationName;
-      } else if (liveData.currentStation?.name) {
-        const isNonHalt = liveData.currentStation.isHalt === false || liveData.currentStation.locationType === 'non-halting';
-        const code = !isNonHalt && liveData.currentStation.code ? ` (${liveData.currentStation.code})` : '';
-        displayLocation = `${liveData.currentStation.name}${code}`;
-      } else if (liveData.stations) {
-        const curr = liveData.stations.find(s => s.status === 'CURRENT');
-        if (curr) {
-          const isNonHalt = curr.isHalt === false || curr.locationType === 'non-halting';
-          const code = !isNonHalt && curr.code ? ` (${curr.code})` : '';
-          displayLocation = `${curr.name}${code}`;
+  if (liveData && !liveError) {
+    if (liveData.currentLocationName) {
+      displayLocation = liveData.currentLocationName;
+    } else if (liveData.currentStation?.name) {
+      const isNonHalt = liveData.currentStation.isHalt === false || liveData.currentStation.locationType === 'non-halting';
+      const code = !isNonHalt && liveData.currentStation.code ? ` (${liveData.currentStation.code})` : '';
+      displayLocation = `${liveData.currentStation.name}${code}`;
+    } else if (liveData.stations) {
+      const curr = liveData.stations.find(s => s.status === 'CURRENT');
+      if (curr) {
+        const isNonHalt = curr.isHalt === false || curr.locationType === 'non-halting';
+        const code = !isNonHalt && curr.code ? ` (${curr.code})` : '';
+        displayLocation = `${curr.name}${code}`;
+      } else {
+        const passedStns = liveData.stations.filter(s => s.status === 'PASSED');
+        const upcomingStns = liveData.stations.filter(s => s.status === 'UPCOMING' || s.status === 'NEXT');
+        if (passedStns.length > 0 && upcomingStns.length > 0) {
+          displayLocation = `Between ${passedStns[passedStns.length - 1].name} and ${upcomingStns[0].name}`;
+        } else if (passedStns.length > 0) {
+          displayLocation = `Departed ${passedStns[passedStns.length - 1].name}`;
         } else {
-          const passedStns = liveData.stations.filter(s => s.status === 'PASSED');
-          const upcomingStns = liveData.stations.filter(s => s.status === 'UPCOMING' || s.status === 'NEXT');
-          if (passedStns.length > 0 && upcomingStns.length > 0) {
-            displayLocation = `Between ${passedStns[passedStns.length - 1].name} and ${upcomingStns[0].name}`;
-          } else if (passedStns.length > 0) {
-            displayLocation = `Departed ${passedStns[passedStns.length - 1].name}`;
-          } else {
-            displayLocation = 'Live unavailable';
-          }
+          displayLocation = 'Live unavailable';
         }
       }
-      
-      // Determine next halt station (strictly isHalt !== false)
-      if (liveData.stations) {
-        const upcomingHalts = liveData.stations.filter(s => 
-          (s.status === 'UPCOMING' || s.status === 'NEXT') && s.isHalt !== false && s.locationType !== 'non-halting'
-        );
-        if (upcomingHalts.length > 0) {
-          const halt = upcomingHalts[0];
-          displayNextHalt = `${halt.name}${halt.code ? ` (${halt.code})` : ''}`;
-        } else if (liveData.nextStation?.name) {
-          displayNextHalt = liveData.nextStation.name;
-        }
+    }
+    
+    // Determine next halt station (strictly isHalt !== false)
+    if (liveData.stations) {
+      const upcomingHalts = liveData.stations.filter(s => 
+        (s.status === 'UPCOMING' || s.status === 'NEXT') && s.isHalt !== false && s.locationType !== 'non-halting'
+      );
+      if (upcomingHalts.length > 0) {
+        const halt = upcomingHalts[0];
+        displayNextHalt = `${halt.name}${halt.code ? ` (${halt.code})` : ''}`;
       } else if (liveData.nextStation?.name) {
         displayNextHalt = liveData.nextStation.name;
       }
-    } else {
-      // Live tracking failed or unavailable
-      displayLocation = 'Live unavailable';
-      const firstUpcoming = displayStations.find(s => s.isHalt !== false && s.locationType !== 'non-halting') || displayStations[1];
-      displayNextHalt = firstUpcoming ? `${firstUpcoming.name}${firstUpcoming.code ? ` (${firstUpcoming.code})` : ''}` : 'N/A';
+    } else if (liveData.nextStation?.name) {
+      displayNextHalt = liveData.nextStation.name;
     }
-  } else {
+  } else if (displayStations.length > 0) {
+    // Scheduled baseline route fallback
+    const firstUpcoming = displayStations.find(s => s.isHalt !== false && s.locationType !== 'non-halting') || displayStations[1] || displayStations[0];
+    displayLocation = displayStations[0]?.name ? `Departing ${displayStations[0].name}` : 'Scheduled Route';
+    displayNextHalt = firstUpcoming ? `${firstUpcoming.name}${firstUpcoming.code ? ` (${firstUpcoming.code})` : ''}` : 'N/A';
+  } else if (isLoading) {
     displayLocation = 'Loading...';
     displayNextHalt = 'Loading...';
   }
@@ -235,17 +260,17 @@ export default function TrainDetails() {
       <div className="info-grid">
         <div className="info-item">
           <div className="label">Current Location</div>
-          <div className="value">{loadingLive ? 'Loading...' : displayLocation}</div>
+          <div className="value">{(isLoading && !liveData && displayStations.length === 0) ? 'Loading...' : displayLocation}</div>
         </div>
         <div className="info-item">
           <div className="label">Status</div>
           <div className={`value ${displayDelay > 0 ? 'status-delayed' : 'status-on-time'}`}>
-            {loadingLive ? 'Loading...' : displayDelay > 0 ? `${displayDelay} mins late` : 'On Time'}
+            {(isLoading && !liveData && displayStations.length === 0) ? 'Loading...' : displayDelay > 0 ? `${displayDelay} mins late` : 'On Time'}
           </div>
         </div>
         <div className="info-item">
           <div className="label">Next Halt</div>
-          <div className="value">{loadingLive ? 'Loading...' : displayNextHalt}</div>
+          <div className="value">{(isLoading && !liveData && displayStations.length === 0) ? 'Loading...' : displayNextHalt}</div>
         </div>
         <div className="info-item">
           <div className="label">Distance To Destination</div>
@@ -255,7 +280,7 @@ export default function TrainDetails() {
         </div>
       </div>
       
-      {!loadingLive && liveError && (
+      {!isLoading && liveError && (
         <div style={{ 
           color: '#ffb74d', 
           backgroundColor: 'rgba(255, 183, 77, 0.1)', 
@@ -277,17 +302,17 @@ export default function TrainDetails() {
         <button 
           className="refresh-live-btn"
           onClick={() => fetchLiveData(true)}
-          disabled={loadingLive}
+          disabled={isLoading || isRefreshing}
           title="Refresh complete live route data including all halting and non-halting locations"
         >
-          <span style={{ display: 'inline-block', transform: loadingLive ? 'rotate(180deg)' : 'none', transition: 'transform 0.4s' }}>🔄</span>
-          {loadingLive ? 'Refreshing Status...' : 'Refresh Live Status'}
+          <span style={{ display: 'inline-block', transform: isRefreshing ? 'rotate(180deg)' : 'none', transition: 'transform 0.4s' }}>🔄</span>
+          {isRefreshing ? 'Refreshing Status...' : 'Refresh Live Status'}
         </button>
 
-        {!loadingLive && !liveError && (
+        {(!isLoading || isRefreshing) && !liveError && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#aaa', fontSize: '0.85rem' }}>
-            <div className="live-indicator"></div>
-            <span>LIVE • {lastUpdated !== 'N/A' ? `Last updated ${lastUpdated}` : 'Real-time'}</span>
+            <div className={`live-indicator ${isRefreshing ? 'pulse-subtle' : ''}`}></div>
+            <span>LIVE • {isRefreshing ? 'Updating...' : (lastUpdated !== 'N/A' ? `Last updated ${lastUpdated}` : 'Real-time')}</span>
           </div>
         )}
       </div>
@@ -343,9 +368,11 @@ export default function TrainDetails() {
               ? (station.name || station)
               : `${station.name || station}${station.code ? ` (${station.code})` : ''}`;
 
+            const stableStationKey = station.stationCode || station.code || station.name || `stn-${station.sequence ?? index}`;
+
             return (
               <div 
-                key={station.sequence ? `${station.sequence}-${index}` : index}
+                key={stableStationKey}
                 className={`timeline-node ${isSelected ? 'selected' : ''}`}
                 onClick={() => setSelectedDestinationIndex(index)}
               >

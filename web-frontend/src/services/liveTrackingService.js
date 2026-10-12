@@ -286,80 +286,112 @@ export function normalizeLiveTrackingResponse(payload, trainNumber, existingStat
   };
 }
 
+// Cache & in-flight request deduplication to prevent parallel calls & rate-limit flicker
+const inFlightRequests = new Map();
+const responseCache = new Map();
+const THROTTLE_CACHE_MS = 3500;
+
 /**
  * Fetches live train tracking data using multi-tier strategy:
  * 1. Primary: Deployed API endpoint (/api/trains/:trainNumber/live)
  * 2. Fallback: Direct RailRadar API request with CORS support
+ * Includes in-flight deduplication and short-lived throttle cache to eliminate redundant parallel calls.
  */
-export async function fetchLiveTrainData(trainNumber, existingStations = []) {
+export async function fetchLiveTrainData(trainNumber, existingStations = [], force = false) {
   const cleanTrainNumber = String(trainNumber || '').trim();
   if (!cleanTrainNumber) {
     throw new Error('No train number specified');
   }
 
-  let backendError = null;
-  let backendResponse = null;
-  const backendUrl = `${API_URL}/${encodeURIComponent(cleanTrainNumber)}/live`;
+  // Check throttle cache if not forced
+  if (!force) {
+    const cached = responseCache.get(cleanTrainNumber);
+    if (cached && (Date.now() - cached.timestamp < THROTTLE_CACHE_MS)) {
+      return cached.data;
+    }
+  }
 
-  // Tier 1: Try backend / serverless endpoint
-  try {
-    const res = await fetch(backendUrl, {
-      headers: {
-        'Accept': 'application/json'
-      }
-    });
-    backendResponse = res;
+  // Deduplicate redundant parallel in-flight requests for the same train
+  if (inFlightRequests.has(cleanTrainNumber)) {
+    return inFlightRequests.get(cleanTrainNumber);
+  }
 
-    if (res.ok) {
-      const contentType = res.headers.get('content-type') || '';
-      if (contentType.includes('application/json')) {
-        const json = await res.json();
-        if (json && (json.success || json.data)) {
-          return normalizeLiveTrackingResponse(json, cleanTrainNumber, existingStations);
+  const fetchPromise = (async () => {
+    let backendError = null;
+    let backendResponse = null;
+    const backendUrl = `${API_URL}/${encodeURIComponent(cleanTrainNumber)}/live`;
+
+    // Tier 1: Try backend / serverless endpoint
+    try {
+      const res = await fetch(backendUrl, {
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      backendResponse = res;
+
+      if (res.ok) {
+        const contentType = res.headers.get('content-type') || '';
+        if (contentType.includes('application/json')) {
+          const json = await res.json();
+          if (json && (json.success || json.data)) {
+            const normalized = normalizeLiveTrackingResponse(json, cleanTrainNumber, existingStations);
+            responseCache.set(cleanTrainNumber, { timestamp: Date.now(), data: normalized });
+            return normalized;
+          }
         }
       }
+    } catch (err) {
+      backendError = err;
+      console.warn('Backend live endpoint fetch notice:', err.message);
     }
-  } catch (err) {
-    backendError = err;
-    console.warn('Backend live endpoint fetch notice:', err.message);
-  }
 
-  // Tier 2: Direct client-side RailRadar fetch (only if client API key is provided)
-  if (!RAILRADAR_API_KEY) {
-    if (backendError) {
-      throw new Error(`Unable to fetch live telemetry: ${backendError.message}`);
-    }
-    throw new Error('Live telemetry is currently unavailable from serverless backend');
-  }
-
-  const directUrl = `${DIRECT_LIVE_API_BASE}/${encodeURIComponent(cleanTrainNumber)}/live`;
-  try {
-    const directRes = await fetch(directUrl, {
-      headers: {
-        'Authorization': `Bearer ${RAILRADAR_API_KEY}`
+    // Tier 2: Direct client-side RailRadar fetch (only if client API key is provided)
+    if (!RAILRADAR_API_KEY) {
+      if (backendError) {
+        throw new Error(`Unable to fetch live telemetry: ${backendError.message}`);
       }
-    });
+      throw new Error('Live telemetry is currently unavailable from serverless backend');
+    }
 
-    if (directRes.ok) {
-      const json = await directRes.json();
-      if (json && json.success && json.data) {
-        return normalizeLiveTrackingResponse(json, cleanTrainNumber, existingStations);
+    const directUrl = `${DIRECT_LIVE_API_BASE}/${encodeURIComponent(cleanTrainNumber)}/live`;
+    try {
+      const directRes = await fetch(directUrl, {
+        headers: {
+          'Authorization': `Bearer ${RAILRADAR_API_KEY}`
+        }
+      });
+
+      if (directRes.ok) {
+        const json = await directRes.json();
+        if (json && json.success && json.data) {
+          const normalized = normalizeLiveTrackingResponse(json, cleanTrainNumber, existingStations);
+          responseCache.set(cleanTrainNumber, { timestamp: Date.now(), data: normalized });
+          return normalized;
+        } else {
+          throw new Error(json?.msg || 'Live telemetry currently unavailable for this train');
+        }
+      } else if (directRes.status === 404) {
+        throw new Error(`Train ${cleanTrainNumber} is currently not running or not active in live tracking`);
+      } else if (directRes.status === 429) {
+        throw new Error('Live railway tracking rate limit reached. Retrying shortly...');
       } else {
-        throw new Error(json?.msg || 'Live telemetry currently unavailable for this train');
+        throw new Error(`External railway API returned HTTP status ${directRes.status}`);
       }
-    } else if (directRes.status === 404) {
-      throw new Error(`Train ${cleanTrainNumber} is currently not running or not active in live tracking`);
-    } else if (directRes.status === 429) {
-      throw new Error('Live railway tracking rate limit reached. Retrying shortly...');
-    } else {
-      throw new Error(`External railway API returned HTTP status ${directRes.status}`);
+    } catch (directErr) {
+      // Diagnostic logging per Requirement 16
+      console.error('LIVE TRACKING ERROR:', directErr);
+      console.error('LIVE TRACKING URL:', directUrl);
+      console.error('LIVE TRACKING RESPONSE:', backendResponse || backendError);
+      throw directErr;
     }
-  } catch (directErr) {
-    // Diagnostic logging per Requirement 16
-    console.error('LIVE TRACKING ERROR:', directErr);
-    console.error('LIVE TRACKING URL:', directUrl);
-    console.error('LIVE TRACKING RESPONSE:', backendResponse || backendError);
-    throw directErr;
+  })();
+
+  inFlightRequests.set(cleanTrainNumber, fetchPromise);
+  try {
+    return await fetchPromise;
+  } finally {
+    inFlightRequests.delete(cleanTrainNumber);
   }
 }
 

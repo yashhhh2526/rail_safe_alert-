@@ -33,7 +33,11 @@ export default function ActiveAlarm() {
   
   const [currentDist, setCurrentDist] = useState(null);
   const [isAlarmRinging, setIsAlarmRinging] = useState(false);
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const isAlarmRingingRef = useRef(false);
+  const isFetchingRef = useRef(false);
   const pollingIntervalRef = useRef(null);
+  const retryTimeoutRef = useRef(null);
   const retryCountRef = useRef(0);
   const MAX_RETRIES = 3;
   const [networkError, setNetworkError] = useState(null);
@@ -41,6 +45,8 @@ export default function ActiveAlarm() {
 
   const { train, alarmType, alertValue, destination, liveData } = state || {};
   const [liveDataState, setLiveDataState] = useState(liveData);
+  const liveDataRef = useRef(liveData);
+  liveDataRef.current = liveDataState;
   
   let initialIndex = train?.stations?.findIndex(
     s => (s.name || s) === train.currentLocation?.station
@@ -56,6 +62,8 @@ export default function ActiveAlarm() {
   }
 
   const [activeStationIndex, setActiveStationIndex] = useState(Math.max(0, initialIndex));
+  const activeStationIndexRef = useRef(activeStationIndex);
+  activeStationIndexRef.current = activeStationIndex;
 
   // Sync settings when loaded
   useEffect(() => {
@@ -63,10 +71,11 @@ export default function ActiveAlarm() {
   }, []);
 
   const triggerAlarm = useCallback(() => {
-    if (isAlarmRinging) return;
+    if (isAlarmRingingRef.current) return;
+    isAlarmRingingRef.current = true;
     setIsAlarmRinging(true);
     
-    // 1. Resilient offline Web Audio Tone
+    // 1. Resilient offline Web Audio Tone (singleton, instantiated once)
     startAlarmTone(userSettings.alarmSound || 'digital');
 
     // 2. Device Vibration
@@ -86,9 +95,10 @@ export default function ActiveAlarm() {
         `Wake up! You are within ${alertValue} ${unit} of ${destination?.name || destination}.`
       );
     }
-  }, [isAlarmRinging, userSettings, destination, alertValue, alarmType]);
+  }, [userSettings, destination, alertValue, alarmType]);
 
-  const calculateCurrentStatus = useCallback((currentLiveData = liveDataState) => {
+  const calculateCurrentStatus = useCallback((targetLiveData) => {
+    const currentLiveData = targetLiveData || liveDataRef.current;
     let destNode = null;
     let currentNode = null;
     let remainingDistance = null;
@@ -119,7 +129,7 @@ export default function ActiveAlarm() {
       const targetName = destination?.name || destination;
       const destStn = train.stations.find(s => s.code === targetCode || s.name === targetName);
       if (destStn && destStn.cumulativeDistanceKm !== undefined) {
-        const curStn = train.stations[activeStationIndex] || train.stations[0];
+        const curStn = train.stations[activeStationIndexRef.current] || train.stations[0];
         const curDist = curStn?.cumulativeDistanceKm || 0;
         remainingDistance = Math.max(0, destStn.cumulativeDistanceKm - curDist);
       }
@@ -127,7 +137,7 @@ export default function ActiveAlarm() {
     
     if (remainingDistance === null && destination?.coords) {
       const destCoords = destination.coords;
-      let currentIndex = activeStationIndex;
+      let currentIndex = activeStationIndexRef.current;
       if (currentLiveData?.currentStation?.name) {
         const liveIndex = (currentLiveData.stations || train?.stations || []).findIndex(
           s => (s.name || s).toLowerCase() === currentLiveData.currentStation.name.toLowerCase()
@@ -144,7 +154,6 @@ export default function ActiveAlarm() {
     }
     
     if (remainingDistance === null) {
-      setCurrentDist(null);
       return;
     }
     
@@ -162,19 +171,26 @@ export default function ActiveAlarm() {
     if (effectiveValue <= alertValue && remainingDistance > 0) {
       triggerAlarm();
     }
-  }, [liveDataState, destination, train, activeStationIndex, alarmType, alertValue, triggerAlarm]);
+  }, [destination, train, alarmType, alertValue, triggerAlarm]);
 
-  const fetchLiveStatus = useCallback(async () => {
+  const fetchLiveStatus = useCallback(async (isManual = false) => {
     if (!train?.trainNumber) return;
+    if (isFetchingRef.current) return;
+    isFetchingRef.current = true;
+    setIsRefreshing(true);
+
     if (!navigator.onLine) {
       setNetworkError('You are offline. Waiting for network connection...');
+      isFetchingRef.current = false;
+      setIsRefreshing(false);
       return;
     }
     
     try {
-      const liveNormalized = await fetchLiveTrainData(train.trainNumber, train.stations || []);
+      const liveNormalized = await fetchLiveTrainData(train.trainNumber, train.stations || [], isManual);
       if (liveNormalized) {
         setLiveDataState(liveNormalized);
+        liveDataRef.current = liveNormalized;
         calculateCurrentStatus(liveNormalized);
         setNetworkError(null);
         retryCountRef.current = 0;
@@ -184,10 +200,14 @@ export default function ActiveAlarm() {
       if (retryCountRef.current < MAX_RETRIES) {
         retryCountRef.current += 1;
         setNetworkError(`Connection notice. Retrying (${retryCountRef.current}/${MAX_RETRIES})...`);
-        setTimeout(fetchLiveStatus, 5000 * retryCountRef.current);
+        if (retryTimeoutRef.current) clearTimeout(retryTimeoutRef.current);
+        retryTimeoutRef.current = setTimeout(() => fetchLiveStatus(false), 5000 * retryCountRef.current);
       } else {
         setNetworkError('Live serverless telemetry paused. Using verified route position.');
       }
+    } finally {
+      isFetchingRef.current = false;
+      setIsRefreshing(false);
     }
   }, [train, calculateCurrentStatus]);
 
@@ -197,23 +217,32 @@ export default function ActiveAlarm() {
     }
     
     // Initial sync
-    calculateCurrentStatus(liveData);
-    fetchLiveStatus();
+    if (liveData) {
+      calculateCurrentStatus(liveData);
+    }
+    fetchLiveStatus(false);
 
-    // Setup polling every 3 minutes
+    // Setup stable background polling every 60 seconds
     pollingIntervalRef.current = setInterval(() => {
-      if (!isAlarmRinging) {
-        fetchLiveStatus();
+      if (!isAlarmRingingRef.current) {
+        fetchLiveStatus(false);
       }
-    }, 180000);
+    }, 60000);
 
     return () => {
+      if (pollingIntervalRef.current) {
+        clearInterval(pollingIntervalRef.current);
+        pollingIntervalRef.current = null;
+      }
+      if (retryTimeoutRef.current) {
+        clearTimeout(retryTimeoutRef.current);
+        retryTimeoutRef.current = null;
+      }
       stopAlarmTone();
       stopVibration();
       stopAnnouncement();
-      if (pollingIntervalRef.current) clearInterval(pollingIntervalRef.current);
     };
-  }, [isAlarmRinging, liveData, calculateCurrentStatus, fetchLiveStatus]);
+  }, [train?.trainNumber, calculateCurrentStatus, fetchLiveStatus, liveData]);
 
   if (!state || !state.train) {
     return (
@@ -388,26 +417,30 @@ export default function ActiveAlarm() {
 
           {/* Interactive Route Stations Timeline */}
           <div className="timeline-container" style={{ textAlign: 'left', marginBottom: '2rem', maxHeight: '350px', overflowY: 'auto' }}>
-            {stationsArray.map((station, index) => (
-              <StationTimelineNode 
-                key={station.sequence ? `${station.sequence}-${index}` : index}
-                station={station}
-                index={index}
-                totalStations={stationsArray.length}
-                nextStation={stationsArray[index + 1]}
-                destination={destination}
-                displayDelay={displayDelay}
-              />
-            ))}
+            {stationsArray.map((station, index) => {
+              const stableStationKey = station.stationCode || station.code || station.name || `stn-${station.sequence ?? index}`;
+              return (
+                <StationTimelineNode 
+                  key={stableStationKey}
+                  station={station}
+                  index={index}
+                  totalStations={stationsArray.length}
+                  nextStation={stationsArray[index + 1]}
+                  destination={destination}
+                  displayDelay={displayDelay}
+                />
+              );
+            })}
           </div>
 
           <div style={{ display: 'flex', gap: '0.8rem', marginTop: '1rem' }}>
             <button 
               type="button"
-              onClick={() => fetchLiveStatus()} 
-              style={{ background: 'var(--primary)', flex: 1, padding: '1rem', fontWeight: 'bold' }}
+              onClick={() => fetchLiveStatus(true)} 
+              disabled={isRefreshing}
+              style={{ background: 'var(--primary)', flex: 1, padding: '1rem', fontWeight: 'bold', opacity: isRefreshing ? 0.7 : 1, cursor: isRefreshing ? 'not-allowed' : 'pointer' }}
             >
-              🔄 Refresh Status
+              {isRefreshing ? 'Refreshing Status...' : '🔄 Refresh Status'}
             </button>
             <button 
               type="button"

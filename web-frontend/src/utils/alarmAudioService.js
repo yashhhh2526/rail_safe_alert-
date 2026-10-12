@@ -138,17 +138,40 @@ export function stopVibration() {
   }
 }
 
+let lastSpokenText = '';
+let lastSpokenTimestamp = 0;
+
 /**
- * Speaks a voice announcement via Web Speech API
+ * Speaks a voice announcement via Web Speech API with deduplication and throttling
+ * to prevent speech stutter/re-triggering on live tracking telemetry updates.
  */
 export function speakAnnouncement(text) {
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     try {
+      const now = Date.now();
+      // Prevent re-triggering the same announcement within 12 seconds
+      if (lastSpokenText === text && (now - lastSpokenTimestamp < 12000)) {
+        return;
+      }
+      // If already speaking the same text, let it finish naturally
+      if (window.speechSynthesis.speaking && lastSpokenText === text) {
+        return;
+      }
+
       window.speechSynthesis.cancel(); // Cancel any lingering speech
+      lastSpokenText = text;
+      lastSpokenTimestamp = now;
+
       const utterance = new SpeechSynthesisUtterance(text);
       utterance.rate = 1.0;
       utterance.pitch = 1.1;
       utterance.volume = 1.0;
+      utterance.onend = () => {
+        // Speech ended naturally
+      };
+      utterance.onerror = () => {
+        // Speech error handled silently
+      };
       window.speechSynthesis.speak(utterance);
     } catch (err) {
       console.warn('Speech synthesis notice:', err);
@@ -157,11 +180,20 @@ export function speakAnnouncement(text) {
 }
 
 export function stopAnnouncement() {
+  lastSpokenText = '';
+  lastSpokenTimestamp = 0;
   if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
     try {
       window.speechSynthesis.cancel();
     } catch {}
   }
+}
+
+/**
+ * Checks if the synthesized alarm is currently ringing
+ */
+export function isAlarmActive() {
+  return isRinging;
 }
 
 /**

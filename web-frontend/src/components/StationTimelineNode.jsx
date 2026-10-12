@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { formatTimeWithContext, calculateLiveETA } from '../utils/timeUtils';
 
-export default function StationTimelineNode({
+function StationTimelineNode({
   station,
   index,
   totalStations,
@@ -135,3 +136,5 @@ export default function StationTimelineNode({
     </div>
   );
 }
+
+export default memo(StationTimelineNode);

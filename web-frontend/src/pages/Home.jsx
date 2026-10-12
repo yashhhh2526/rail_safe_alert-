@@ -163,7 +163,7 @@ export default function Home() {
           </button>
         </div>
 
-        {loading ? (
+        {loading && results.length === 0 ? (
           <div className="loader"></div>
         ) : (
           <div className="results-list">
@@ -200,7 +200,7 @@ export default function Home() {
                   <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', marginBottom: '1rem' }}>⭐ Quick Demo Trains & Recent Searches</h3>
                   <div className="recent-journeys">
                     {recentJourneys.map((rj, idx) => (
-                      <div key={idx} className="recent-card glass-panel" onClick={() => handleRecentClick(rj.trainNumber)}>
+                      <div key={rj.trainNumber || `recent-${idx}`} className="recent-card glass-panel" onClick={() => handleRecentClick(rj.trainNumber)}>
                         <div style={{ fontWeight: 'bold', color: 'var(--secondary)', marginBottom: '0.3rem' }}>🚆 {rj.trainNumber}</div>
                         <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{rj.trainName}</div>
                         <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{rj.route}</div>
