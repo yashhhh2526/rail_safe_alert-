@@ -1,0 +1,13 @@
+{
+  "framework": "vite",
+  "rewrites": [
+    {
+      "source": "/api/trains/:trainNumber/live",
+      "destination": "https://api.railradar.in/v1/trains/:trainNumber/live"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}

@@ -1,0 +1,494 @@
+14553/14554 Delhi Amb Andaura Himachal 16
+14555/14556 Bareilly Delhi 55
+14601/14602 Firozpur Sri Ganganagar 39
+14603/14604 Saharsa Amritsar Jan Sadharan 13
+14605/14606 Lalkuan Amritsar 12,55
+14609/14610 Rishikesh Jammu Tawi Hemkunt 12
+14625/14626 Delhi Sarai Rohilla Firozpur 39
+14629/14630 Ludhiana Firozpur Sutlej 80
+14631/14632 Dehradun Amritsar 12
+14633/14634 Amritsar Pathankot Ravi 51
+14645/14646 Delhi Jammu Tawi Shalimar 16
+14649/14650 Jaynagar Amritsar Saryu Yamuna 15,22,25
+14659/14660 Delhi Jaisalmer 23
+14661/14662 Delhi Barmer 23
+14673/14674 Jaynagar Amritsar Shaheed 15,22
+14681/14682 New Delhi Jalandhar 16
+14701/14702 Jaisalmer Bikaner (via Phalodi) Kolayat 59
+14703/14704 Jaisalmer Lalgarh (via Phalodi) Kolayat 59
+14705/14706 Delhi Sarai Rohilla Sujangarh Salasar 59
+14707/14708 Bikaner Bandra (T) Ranakpur 11,23
+14709/14710 Bikaner Puri 5,32,72,78
+14711/14712 Rishikesh Sri Ganganagar Intercity 45
+14723/14724 Kanpur Central Bhiwani Kalindi 25,39
+14731/14732 Delhi Fazilka 16,45
+14795/14796 Bhiwani Kalka Ekta 27
+14801/14802 Jodhpur Gandhidham 11,23
+14803/14804 Bhagat Ki Kothi Ahmedabad 23
+14805/14806 Yesvantpur Barmer 19,23,31
+14807/14808 Jaipur Alwar 80
+14809/14810 Jaisalmer Jodhpur 23
+14811/14812 Delhi Sarai Rohilla Sikar 59
+14853/14854 Varanasi Jodhpur(via Faizabad) Marudhar 79
+14863/14864 Varanasi Jodhpur(via Sultanpur) Marudhar 79
+14865/14866 Varanasi Jodhpur(via Rae Bareli) Marudhar 79
+14887/14888 Kalka Barmer Chandigarh 45
+14889/14890 Bhagat ki Kothi (Jodhpur) Munabao Link 45
+15001/15002 Muzaffarpur Dehradun 13,64
+15003/15004 Kanpur Anwarganj Gorakhpur Chauri Chaura 63
+15005/15006 Gorakhpur Dehradun 13
+15007/15008 Manduadih Lucknow Krishak 22,63
+15009/15010 Lucknow Jabalpur Chitrakoot 57
+15011/15012 Lucknow Chandigarh 88
+15013/15014 Bhagat Ki Kothi Kathgodam Ranikhet 23,55
+15015/15016 Gorakhpur Yesvantpur 9,35
+15017/15018 Lokmanya Tilak (T) Gorakhpur Kashi 6,63
+15019/15020 Gorakhpur Nautanua Intercity 38
+15021/15022 Shalimar Gorakhpur 32, 63
+15023/15024 Gorakhpur Yesvantpur 9,35,52
+15025/15026 Mau Anand Vihar (T) 25
+15027/15028 Hatia Gorakhpur Maurya 36,37
+15033/15034 Haridwar Ram Nagar 13,55
+15035/15036 Delhi Kathgodam Uttaranchal 55
+Sampark Kranti
+15037/15038 Kanpur Kasganj 25
+15039/15040 Farrukhabad Kasganj 25
+15041/15042 Farrukhabad Kasganj 25
+15045/15046 Gorakhpur Okha 11, 33
+15047/15048 Kolkata Gorakhpur Purvanchal 37
+15049/15050 Kolkata Gorakhpur 37, 63
+15051/15052 Kolkata Gorakhpur 37, 64
+15097/15098 Bhagalpur Jammu Tawi Amarnath 13
+15101/15102 Chhapra Mumbai CST Jan Sadharan 22,35
+15103/15104 Gorakhpur Manduadih 63
+15105/15106 Chhapra Gorakhpur Intercity 22
+15107/15108 Chhapra Mathura 22
+15109/15110 Rajgir Varanasi Budhpurnima 67
+15111/15112 Chhapra Manduadih Intercity 37,63
+15113/15114 Chhapra Lucknow Jn. 82
+15115/15116 Chhapra Delhi 22
+15117/15118 Chhapra Durg 81
+15159/15160 Muzaffarpur Gondia Sarnath 81
+15201/15202 Hajipur Raxaul Intercity 64
+15203/15204 Barauni Lucknow 22
+15209/15210 Saharsa Amritsar Jan Sewa 13,22
+15211/15212 Darbhanga Amritsar Jan Nayak 13,22,64
+15215/15216 Muzaffarpur Narkatiaganj 64
+15227/15228 Yesvantpur Muzaffarpur 20,22,29
+15233/15234 Kolkata Darbhanga 37
+15235/15236 Darbhanga Howrah 37
+15237/15238 Darbhanga Ajmer 13,79,64
+15267/15268 Raxaul LokmanyaTilak(T) Jan Sadharan 6,22,64
+15269/15270 Muzaffarpur Ahmedabad Jan Sadharan 22,23,33
+15271/15272 Howrah Muzaffarpur Jan Sadharan 37
+15273/15274 Raxaul Delhi Satyagraha 22,64
+15275/15276 Saharsa Barauni 90
+15279/15280 Saharsa Adarshnagar Poorabiya 22
+15281/15282 Saharsa Patna Kosi 90
+15283/15284 Saharsa Jaynagar Janki 90
+15307/15308 Bareilly Aishbagh Nainital 61
+15309/15310 Kasganj Aishbagh Rohilkhand 61
+15311/15312 Kasganj Bareilly City Kumaun 61
+15313/15314 Aishbagh Bareilly 61
+15315/15316 Gonda Kasganj Gokul 61
+15319/15320 Paliakalan Aishbagh Sanctuary 61
+15321/15322 Barhni Gonda (MG) Kapilavastu 38
+15463/15464 Balurghat New Jalpaiguri 14
+15467/15468 New Jalpaiguri Alipurduar Jn. Intercity 74
+15469/15470 Alipurduar Jn. Lumding Intercity 14, 66
+15471/15472 Alipurduar Jn. Guwahati Intercity 14
+15603/15604 Kamakhya Ledo Intercity 66
+15605/15606 Kamakhya Mariani Intercity 66
+15609/15610 New Tinsukia Lalgarh Avadh Assam 18,22,39,66
+15611/15612 Lokamanya Tilak (T) Kamakhya Karmabhoomi 5,14,74
+15615/15616 Kamakhya Tezpur Intercity 62
+15619/15620 Gaya Kamakhya 93
+15621/15622 Kamakhya Anand Vihar (T) 13,18,74
+15623/15624 Bhagat Ki Kothi Kamakhya 18,59
+15629/15630 Chennai Egmore Guwahati 29
+15631/15632 Barmer Guwahati 18,28
+15635/15636 Okha Guwahati Dwarka 3,11,18
+15639/15640 Puri Guwahati 29
+15643/15644 Puri Kamakhya 14,29,74
+15645/15646 Lokmanya Tilak (T) Guwahati 18,24
+15647/15648 Lokmanya Tilak (T) Guwahati 18, 24
+15651/15652 Guwahati Jammu Tawi Lohit 13
+15653/15654 Guwahati Jammu Tawi Amarnath 13,64
+15657/15658 Sealdah Guwahati Kanchenjunga 14
+15661/15662 Ranchi Kamakhya 29,73,74
+15665/15666 Kamakhya Dimapur 66
+15667/15668 Gandhidham Kamakhya 3,11,18,33
+15669/15670 Kamakhya Dimapur 66
+15691/15692 Lumding Silchar Cachar 83
+15693/15694 Lumding Silchar Barak Valley 83
+15695/15696 Lumding Agartala 83
+15707/15708 Katihar Amritsar 15,22
+15711/15712 Howrah Katihar 14 
+15713/15714 Katihar Patna Intercity 90
+15715/15716 New Jalpaiguri Ajmer Garib Nawaz 18,23,25
+15717/15718 Guwahati Mariani Intercity 66
+15719/15720 Katihar Siliguri Intercity 93
+15721/15722 Digha New Jalpaiguri Paharia 14
+15723/15724 New Jalpaiguri Sitamarhi 13
+15725/15726 New Jalpaiguri New Cooch Behar Intercity 14
+15765/15766 Siliguri Dhubri Intercity 74 
+15817/15818 Dhubri Silghat Town Rajya Rani 74
+15901/15902 Bangalore Dibrugarh 20,29,66,74
+15903/15904 Dibrugarh Chandigarh 13,66
+15905/15906 Kanniyakumari Dibrugarh Vivek 66,74,29,86
+15927/15928 Kamakhya Dibrugarh 66
+15929/15930 Chennai Egmore Dibrugarh 29,66
+15933/15934 Dibrugarh Amritsar 13,66
+15941/15942 Jhajha Dibrugarh 1,14,29,66,74
+15959/15960 Howrah Dibrugarh Kamrup 14,66
+16001/16002 Chennai Palani 86,70
+16003/16004 Chennai Nagarsol 71,53
+16021/16022 Chennai Mysore Kaveri 20
+16031/16032 Chennai Jammu Tawi Andaman 8,16
+16041/16042 Chennai Alappuzha 86
+16043/16044 Puducherry Mangalore Central 86
+16053/16054 Chennai Tirupati 20
+16057/16058 Chennai Tirupati Sapthagiri 20
+16085/16086 Arakkonam Jolarpettai 20
+16089/16090 Chennai Jolarpettai Yelagiri 20
+16093/16094 Chennai Lucknow Jn. 17
+16101/16102 Chennai Egmore Rameswaram 21
+16105/16106 Chennai Egmore Tiruchendur 21
+16115/16116 Chennai Egmore Puducherry 21
+16125/16126 Chennai Egmore Jodhpur 23,46
+16127/16128 Chennai Egmore Guruvayur 21,85
+16129/16130 Chennai Egmore Tuticorin Link 21
+16175/16176 Chennai Egmore Karaikal 21
+16177/16178 Chennai Egmore Tiruchchirappalli Rockfort 21
+16179/16180 Chennai Egmore Mannargudi Mannai 21
+16181/16182 Chennai Egmore Karaikkudi Silambu 21
+16183/16184 Chennai Egmore Thanjavur 21
+16185/16186 Chennai Egmore Velankanni Link 21
+16187/16188 Karaikkal Ernakulam 86
+16201/16202 Bangalore Shimoga Town Intercity 19
+16203/16204 Chennai Tirupati 20
+16205/16206 Talguppa Mysore Intercity 19
+16209/16210 Ajmer Mysore 11,19,23,60
+16215/16216 Mysore Bangalore Chamundi 20
+16217/16218 Mysore Sai Nagar Shirdi 10,60,19
+16227/16228 Bangalore Talguppa 19
+16231/16232 Mayiladuturai Mysore 69
+16233/16234 Mayiladuturai Tiruchchirappalli 69
+16301/16302 Shoranur Thiruvananthapuram Venad 85
+16303/16304 Ernakulam Thiruvananthapuram Vanchinad 85
+16305/16306 Ernakulam Kannur Intercity 85
+16307/16308 Alappuzha Kannur 85
+16309/16310 Ernakulam Patna 86,29
+16311/16312 Bikaner Kochuveli 23,26
+16313/16314 Ernakulam Kannur 85
+16315/16316 Bangalore Kochuveli 86
+16317/16318 Kanniyakumari Jammu Tawi Himsagar 8,16,86
+16321/16322 Bangalore Thiruvananthapuram 86
+16323/16324 Thiruvananthapuram Shalimar 86,29
+16325/16326 Indore Thiruvananthapuram Ahilyanagari 8, 86
+16327/16328 Korba Thiruvananthapuram 42,8,86
+16331/16332 Mumbai CST Thiruvananthapuram 70
+16333/16334 Veraval Thiruvananthapuram 26
+16335/16336 Gandhidham Nagercoil 26
+16337/16338 Okha Ernakulam 26
+16339/16340 Mumbai CST Nagercoil 70
+16341/16342 Guruvayur Thiruvananthapuram Intercity 85
+16343/16344 Thiruvananthapuram Palakkad Town Amritha 86
+16345/16346 Lokmanya Tilak (T) Thiruvananthapuram Netravati 26
+16347/16348 Thiruvananthapuram Mangalore Central 85
+16349/16350 Thiruvananthapuram Nilambur Road Rajya Rani 86
+16351/16352 Mumbai CST Nagercoil 21,70
+16359/16360 Ernakulam Patna 17,86
+16381/16382 Mumbai CST Kanniyakumari 10,70
+16501/16502 Ahmedabad Yesvantpur 31
+16505/16506 Gandhidham Bangalore 11,19
+16507/16508 Jodhpur Bangalore 11,19,23
+16515/16516 Yesvantpur Karwar 19,26
+16517/16518 Yesvantpur Kannur 20
+16519/16520 Jolarpettai Bangalore 20
+16521/16522 Bangarapet Bangalore 20
+16525/16526 Kanniyakumari Bangalore 86
+16527/16528 Yesvantpur Kannur 86
+16531/16532 Ajmer Bangalore Garib Nawaz 11,19,23,60
+16533/16534 Jodhpur Bangalore 23,11,19,60
+16535/16536 Mysore Solapur Golgumbaz 19
+16537/16538 Bangalore Nagercoil 69
+16557/16558 Mysore Bangalore Rajya Rani 20
+16559/16560 Yesvantpur Mysore 20
+16561/16562 Yesvantpur Kochuveli AC 86
+16565/16566 Yesvantpur Mangalore 86
+16569/16570 Yesvantpur Kacheguda 52
+16589/16590 Bangalore Sri Chhatrapati Rani Chennamma 19
+Shahu Maharaj (T)
+16591/16592 Hubli Mysore Hampi 60
+16593/16594 Hazur Sahib Nanded Bangalore 60
+16603/16604 Mangalore Central Thiruvananthapuram Maveli 85
+16605/16606 Mangalore Central Nagercoil Ernad 85
+16609/16610 Nagercoil Coimbatore 69
+16611/16612 Tuticorin Coimbatore Link 69
+16613/16614 Rajkot Coimbatore 31
+16615/16616 Mannargudi Coimbatore Chemmozhi 69
+16617/16618 Rameswaram Coimbatore 21,69
+16627/16628 Chennai Mangalore Central West Coast 86
+16629/16630 Thiruvananthapuram Mangalore Central Malabar 85
+16649/16650 Mangalore Central Nagercoil Parasuram 85
+16669/16670 Chennai Erode Yercaud 86
+16687/16688 Mangalore Central Jammu Tawi Navyug 8,16,86
+16713/16714 Chennai Egmore Rameswaram 21
+16723/16724 Chennai Egmore Thiruvananthapuram Ananthapuri 21
+16731/16732 Tuticorin Mysore 69
+16733/16734 Rameswaram Okha 11,31,53,70,71
+16779/16780 Tirupati Rameswaram 21
+16787/16788 Tirunelveli Jammu Tawi Link 8,16,69,86
+16853/16854 Chennai Egmore Tiruchchirappalli 21
+16857/16858 Puducherry Mangalore 21,86
+16859/16860 Chennai Egmore Mangalore 21,86
+16861/16862 Puducherry Kanniyakumari 21
+17001/17002 Sai Nagar Shirdi Secunderabad 53
+17005/17006 Hyderabad Raxaul 9,36,37,42
+17007/17008 Secunderabad Darbhanga 36,37,42,9
+17009/17010 Bidar Hyderabad/Secunderabad Intercity 53
+17011/17012 Hyderabad/Secunderabad Sirpur Kaghaznagar Intercity 9
+17013/17014 Pune Hyderabad 53 
+17015/17016 Bhubaneswar Secunderabad Visakha 30
+17017/17018 Rajkot Secunderabad 31
+17019/17020 Hyderabad Ajmer 9,54,53
+17031/17032 Mumbai CST Hyderabad 10
+17035/17036 Secunderabad Sirpur Kagaznagar Telengana 9
+17037/17038 Secunderabad Bikaner 23,46
+17049/17050 Machilipatnam Secunderabad 30
+17057/17058 Mumbai CST Secunderabad Devgiri 53
+17063/17064 Manmad Secunderabad 53
+17201/17202 Guntur Secunderabad Golconda 71
+17203/17204 Bhavnagar Kakinada Town 10,11,30
+17205/17206 Sai Nagar Shirdi Kakinada Town 30,53
+17207/17208 Sai Nagar Shirdi Vijayawada 30,53
+17209/17210 Bangalore Kakinada Town Seshadri 7, 20
+17211/17212 Machilipatnam Yesvantpur Kondaveedu 49
+17213/17214 Narsapur Nagarsol 30,53
+17221/17222 Kakinada Lokmanya Tilak (T) 10,30
+17223/17224 Secunderabad Kurnool Town 52
+17225/17226 Vijayawada Hubli Amaravati 49
+17229/17230 Kochuveli Hyderabad Sabari 71,86
+17231/17232 Narsapur Nagarsol 30,53
+17233/17234 Secunderabad Balharshah Bhagyanagar 9
+17235/17236 Bangalore Nagercoil 69
+17239/17240 Guntur Visakhapatnam Simhadri 30
+17255/17256 Narsapur Hyderabad 30
+17301/17302 Mysore Dharwad 19
+17303/17304 Mysore Bangalore 20
+17305/17306 Londa/Hubli Nizamuddin Link 19
+17307/17308 Mysore Bagalkot Basava 10
+17309/17310 Yesvantpur Vasco-da-Gama 19
+17311/17312 Chennai Vasco-da-Gama 19,20
+17313/17314 Chennai Hubli 19,20
+17315/17316 Vasco-da-Gama Velankanni 19,69
+17317/17318 Hubli Lokmanya Tilak (T) 19
+17401/17402 Tirupati Machilipatnam/Narasapur7
+17405/17406 Tirupati Adilabad Krishna 71
+17407/17408 Tirupati Mannargudi Pamani 21
+17409/17410 Adilabad Hazur Sahib Nanded 53
+17411/17412 Mumbai CST Sri Chhatrapati Mahalaxmi 19
+ Shahu Maharaj (T) 
+17413/17414 Tirupati Puducherry 21
+17415/17416 Tirupati Sri Chhatrapati Haripriya 19,49
+Shahu Maharaj (T)
+17429/17430 Hyderabad Tirupati Rayalaseema 71
+17479/17480 Puri Tirupati 7
+17481/17482 Bilaspur Tirupati 7,42
+17487/17488 Tirupati Visakhapatnam Thirumala 7
+17603/17604 Kacheguda Yesvantpur 52
+17605/17606 Kacheguda Mangalore 71,86
+17607/17608 Secunderabad Kurnool Town Thungabhadra 52
+17609/17610 Patna Purna 17,24,53
+17613/17614 Pune Hazur Sahib Nanded 44
+17615/17616 Kacheguda Madurai 52,70
+17617/17618 Mumbai CST Hazur Sahib Nanded Tapovan 53
+17639/17640 Kacheguda Akola 53
+17643/17644 Chennai Egmore Kakinada Port Circar 7
+17651/17652 Chennai Egmore Kacheguda 71
+17687/17688 Manmad Dharmabad 53
+18001/18002 Howrah Digha Kandari 87
+18003/18004 Jhargram Purulia 87
+18005/18006 Howrah Jagdalpur 5,40
+18007/18008 Shalimar Baripada Intercity 87
+18009/18010 Santragachi Ajmer 34,41,72
+18029/18030 Lokmanya Tilak (T) Shalimar 5
+18047/18048 Howrah Vasco-da-Gama Amravati 7,49
+18101/18102 Tatanagar Jammu Tawi 41
+18103/18104 Tatanagar Amritsar Tatanagar 12,41
+Jallianwalabagh
+18105/18106 Rourkela Bhubaneswar Intercity 78
+18107/18108 Rourkela Koraput 40
+18109/18110 Rourkela Jammu Tawi Link 41
+18181/18182 Tatanagar Chhapra 37
+18183/18184 Tatanagar Danapur 36
+18189/18190 Tatanagar Alappuzha Link 40
+18191/18192 Chhapra Farukkhabad 33
+18201/18202 Durg Nautanwa 38,81
+18203/18204 Durg Kanpur Central Betwa 81
+18205/18206 Durg Nautanwa 38,81
+18207/18208 Durg Ajmer 72,81
+18209/18210 Dallirajhara Raipur 42
+18211/18212 Durg Jagdalpur 40,42
+18213/18214 Durg Jaipur 81,72
+18215/18216 Durg Jammu Tawi 4,32,81
+18233/18234 Indore Bilaspur Narmada 43
+18235/18236 Bhopal Bilaspur 43
+18237/18238 Bilaspur Amritsar Chattisgarh 42,15
+18239 Gevra Road Nagpur 42,5
+18240 Nagpur Bilaspur 5
+18241/18242 Durg Ambikapur 81
+18243/18244 Bilaspur Bhagat Ki Kothi (Jodhpur) 3,28,42 
+18245/18246 Bilaspur Bikaner 3,28,42
+18301/18302 Sambalpur Rayagada 40
+18303/18304 Sambalpur Puri 78
+18309/18310 Sambalpur Hazur Sahib Nanded Nagavalli 30,40,53
+18311/18312 Sambalpur Varanasi 78,41
+18401/18402 Puri Okha 34,46
+18403/18404 Chakradharpur Barbil Intercity 32
+18405/18406 Puri Ahmedabad (via Sambalpur) 34,46,78
+18407/18408 Puri Sai Nagar Shirdi 34,44,78
+18409/18410 Howrah Puri Sri Jagannath 7
+18411/18412 Bhubaneswar Visakhapatnam Intercity 30
+18413/18414 Paradeep Puri 32
+18415/18416 Barbil Puri 32
+18417/18418 Rourkela Bhubaneswar Rajya Rani 78
+18419/18420 Puri Jaynagar 32,37
+18421/18422 Puri Ajmer 34,23,78
+18425/18426 Puri Durg 78,34
+18437/18438 Bhubaneswar Junagarh Link 40
+18447/18448 Bhubaneswar Jagdalpur Hirakhand 40
+18449/18450 Puri Patna Baidyanathdham 32
+18451/18452 Hatia Puri Tapaswini 78
+18463/18464 Bhubaneswar Bangalore Prasanthi 7,49
+18473/18474 Puri Jodhpur 78,5,42,3,28
+18477/18478 Puri Haridwar Utkal 32, 75
+18495/18496 Rameswaram Bhubaneswar 21,7
+18501/18502 Visakhapatnam Gandhidham 8,34
+18507/18508 Visakhapatnam Amritsar Hirakud 78,32,15
+18509/18510 Visakhapatnam Hazur Sahib Nanded 30,53
+18511/18512 Koraput Visakhapatnam 40
+18513/18514 Kanpur Central Amritsar 12,82
+18515/18516 Tatanagar Visakhapatnam 7,32
+18519/18520 Visakhapatnam Lokmanya Tilak (T) 10,30
+18517/18518 Korba Visakhapatnam 42
+18567/18568 Visakhapatnam Kollam 29,86
+18573/18574 Visakhapatnam Bhagat Ki Kothi(Jodhpur) 42,72,81,28
+18603/18604 Ranchi Bhagalpur (via Kiul) 36
+18605/18606 Ranchi Jaynagar 36, 37
+18609/18610 Ranchi Lokmanya Tilak (T) 6,41
+18611/18612 Ranchi Varanasi 41
+18613/18614 Ranchi Chopan 41
+18615/18616 Howrah Hatia 87
+18617/18618 Howrah Ranchi (via Tatanagar) Intercity 87
+18619/18620 Ranchi Dumka Intercity 36
+18621/18622 Patna Hatia Pataliputra 36
+18623/18624 Rajendranagar Hatia 36
+18625/18626 Patna Hatia 36
+18627/18628 Howrah Ranchi (via Asansol) Intercity 73
+18631/18632 Ranchi Ajmer Garib Nawaz 23,41
+18637/18638 Hatia Yesvantpur 20,40
+18645/18646 Howrah Hyderabad East Coast 30
+19005/19006 Mumbai Central Okha Saurashtra Mail 11
+19011/19012 Mumbai Central Ahmedabad Gujarat 11
+19017/19018 Bandra (T) Jamnagar Saurashtra Janata 11
+19019/19020 Bandra (T) Dehradun 3,75
+19023/19024 Mumbai Central Firozpur Janata 3,4,39
+19025/19026 Surat Mahuva 11
+19027/19028 Bandra (T) Jammu Tawi Vivek 11,46,59,80
+19029/19030 Bandra (T) Delhi Sarai Rohilla 11,23
+19037/19038 Bandra (T) Gorakhpur Avadh 3,22
+19039/19040 Bandra (T) Muzaffarpur Avadh 3,22,64
+19047/19048 Surat Bhagalpur 24
+19049/19050 Bandra (T) Patna 24
+19051/19052 Valsad Muzaffarpur Shramik 22,24
+19053/19054 Surat Muzaffarpur 3,33
+19055/19056 Valsad Jodhpur 23,31
+19057/19058 Udhna Varanasi 6
+19059/19060 Surat Hapa/Jamnagar 11
+19061/19062 Bandra (T) Ramnagar 3,55,82
+19063/19064 Bandra (T) Jaisalmer 11,23
+19065/19066 Bandra (T) Jodhpur 11,23
+22691/22692 Bangalore Nizamuddin Rajdhani 9 
+22693/22694 Bangalore Nizamuddin Rajdhani 9 
+22801/22802 Visakhapatnam Sai Nagar Shirdi 30,53
+22803/22804 Howrah Sambalpur 7,78
+22805/22806 Bhubaneswar New Delhi Via Sambalpur78,41
+22807/22808 Santragachi Chennai AC 7
+22811/22812 Bhubaneswar New Delhi Rajdhani 1,32
+22815/22816 Bilaspur Ernakulam 8,42
+22817/22818 Howrah Mysore 7,20
+22823/22824 Bhubaneswar New Delhi Rajdhani 1,32
+22825/22826 Shalimar Chennai 7
+22827/22828 Puri Surat 34,78
+22829/22830 Shalimar Bhuj 4,32,11
+22831/22832 Howrah Sri Sathya Sai 7,49
+Prashanti Nilayam
+22835/22836 Shalimar Puri 7
+22843/22844 Bilaspur Patna 5,36
+22845/22846 Pune Hatia 5,44
+22847/22848 Visakhapatnam Lokmanya Tilak (T) 42,5
+22849/22850 Shalimar Secunderabad 30
+22851/22852 Santragachi Mangalore Vivek 7,86
+22853/22854 Shalimar Visakhapatnam 7
+22855/22856 Santragachi Tirupati 7
+22859/22860 Puri Chennai 7
+22861/22862 Shalimar Bankura Rajya Rani 87
+22865/22866 Lokmanya Tilak (T) Puri 5,78
+22869/22870 Visakhapatnam Chennai 7
+22871/22872 Bhubaneswar Tirupati 7
+22873/22874 Digha Visakhapatnam 7
+22875/22876 Kharagpur Purulia Intercity 87
+22877/22878 Digha Puri 7
+22879/22880 Bhubaneswar Tirupati 7
+22881/22882 Pune Bhubaneswar 10,30
+22883/22884 Puri Yesvantpur Garib Rath 7,49
+22889/22890 Digha Puri 7
+22893/22894 Sai Nagar Shirdi Howrah 5
+22901/22902 Bandra (T) Udaipur City 3,54
+22903/22904 Bandra (T) Bhuj AC 11
+22905/22906 Okha Howrah Link 34
+22907/22908 Madgaon Hapa 26
+22909/22910 Valsad Puri 3,32,33,43,78
+22915/22916 Bandra (T) Hisar 11,23,59
+22917/22918 Bandra (T) Haridwar 3,75
+22919/22920 Rajkot Delhi Sarai Rohilla 11,23
+22925/22926 Bandra (T) Kalka Paschim Link 27
+22981/22982 Kota Sri Ganga Nagar 28
+22995/22996 Bandra (T) Ajmer 3,54
+23225/23226 Saharsa Danapur Link 90
+23345/23346 Varanasi Shaktinagar Link 25
+23347/23348 Patna Singrauli Link 48
+24041/24042 Delhi Sarai Rohilla Kotdwara Mussoorie Link 75
+24227/24228 Varanasi Kanpur 25
+24369/24370 Shakthinagar Bareilly Triveni 25
+24887/24888 Haridwar Barmer Link 45
+25013/25014 Bhagat Ki Kothi Ramnagar Corbett Park Link 23,55
+25035/25036 Delhi Ramnagar Link Exp 55
+25201/25202 Hajipur Narkatiaganj Intercity Link 64
+25609/25610 Guwahati Darbhanga Link 90
+25631/25632 Bikaner Guwahati 18,28
+25715/25716 Radhikapur Delhi Link 18
+28181/28182 Tatanagar Katihar Link 37
+29005/29006 Veraval Okha Link 11
+29019/29020 Meerut Mandsor Link 3,54,75
+52541/52540 New Jalpaiguri Darjeeling 95
+52545/52544 Kurseong Darjeeling 95
+52546 Ghum Darjeeling 95
+52457/52458 Kalka Shimla 94
+52451/52452 Kalka Shimla Shivalik 94
+52453/52454 Kalka Shimla Mail 94
+52455/52456 Kalka Shimla 94
+52461/52462 Pathankot Jn. Jwalamukhi Road 96
+52463/52464 Pathankot Jn. Baijnath Paprola 96
+52465/52466 Pathankot Jn. Baijnath Paprola 96
+52467/52468 Pathankot Jn. Baijnath Paprola 96
+52469/52470 Pathankot Jn. Baijnath Paprola 96
+52471/52472 Pathankot Jn. Joginder Nagar 96
+52473/52474 Pathankot Jn. Joginder Nagar 96
+56137/56136 Udagamandalam Mettupalayam 97
+56140/56138 Coonoor Udagamandalam 97
+56139/56141 Coonoor Udagamandalam 97
+56142/56143 Coonoor Udagamandalam 97
+84369/84370 Barwadih Bareilly 25,73

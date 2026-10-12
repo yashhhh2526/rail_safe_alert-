@@ -1,0 +1,3239 @@
+[
+  {
+    "trainNumber": "12345",
+    "trainName": "Howrah - New Delhi Rajdhani",
+    "stations": [
+      {
+        "name": "Howrah",
+        "coords": {
+          "lat": 22.5855,
+          "lng": 88.3426
+        }
+      },
+      {
+        "name": "Asansol",
+        "coords": {
+          "lat": 23.1335,
+          "lng": 87.3305
+        }
+      },
+      {
+        "name": "Dhanbad",
+        "coords": {
+          "lat": 23.6816,
+          "lng": 86.3183
+        }
+      },
+      {
+        "name": "Parasnath",
+        "coords": {
+          "lat": 24.2296,
+          "lng": 85.3062
+        }
+      },
+      {
+        "name": "Gaya",
+        "coords": {
+          "lat": 24.7776,
+          "lng": 84.294
+        }
+      },
+      {
+        "name": "Dehri On Sone",
+        "coords": {
+          "lat": 25.3257,
+          "lng": 83.2819
+        }
+      },
+      {
+        "name": "Bhabua Road",
+        "coords": {
+          "lat": 25.8737,
+          "lng": 82.2697
+        }
+      },
+      {
+        "name": "Pt. DD Upadhyaya",
+        "coords": {
+          "lat": 26.4218,
+          "lng": 81.2576
+        }
+      },
+      {
+        "name": "Prayagraj Jn",
+        "coords": {
+          "lat": 26.9698,
+          "lng": 80.2454
+        }
+      },
+      {
+        "name": "Kanpur Central",
+        "coords": {
+          "lat": 27.5178,
+          "lng": 79.2333
+        }
+      },
+      {
+        "name": "Ghaziabad",
+        "coords": {
+          "lat": 28.0659,
+          "lng": 78.2211
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 23.1335,
+      "lng": 87.3305,
+      "station": "Asansol"
+    }
+  },
+  {
+    "trainNumber": "12951",
+    "trainName": "Mumbai - New Delhi Rajdhani",
+    "stations": [
+      {
+        "name": "Mumbai Central",
+        "coords": {
+          "lat": 19.076,
+          "lng": 72.8777
+        }
+      },
+      {
+        "name": "Borivali",
+        "coords": {
+          "lat": 19.9431,
+          "lng": 73.2715
+        }
+      },
+      {
+        "name": "Surat",
+        "coords": {
+          "lat": 20.8102,
+          "lng": 73.6652
+        }
+      },
+      {
+        "name": "Bharuch",
+        "coords": {
+          "lat": 21.6772,
+          "lng": 74.059
+        }
+      },
+      {
+        "name": "Vadodara",
+        "coords": {
+          "lat": 22.5443,
+          "lng": 74.4527
+        }
+      },
+      {
+        "name": "Ratlam",
+        "coords": {
+          "lat": 23.4114,
+          "lng": 74.8465
+        }
+      },
+      {
+        "name": "Nagda",
+        "coords": {
+          "lat": 24.2785,
+          "lng": 75.2402
+        }
+      },
+      {
+        "name": "Kota",
+        "coords": {
+          "lat": 25.1456,
+          "lng": 75.634
+        }
+      },
+      {
+        "name": "Sawai Madhopur",
+        "coords": {
+          "lat": 26.0127,
+          "lng": 76.0277
+        }
+      },
+      {
+        "name": "Mathura",
+        "coords": {
+          "lat": 26.8797,
+          "lng": 76.4215
+        }
+      },
+      {
+        "name": "Faridabad",
+        "coords": {
+          "lat": 27.7468,
+          "lng": 76.8152
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 19.9431,
+      "lng": 73.2715,
+      "station": "Borivali"
+    }
+  },
+  {
+    "trainNumber": "12004",
+    "trainName": "New Delhi - Lucknow Swarna Shatabdi",
+    "stations": [
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      },
+      {
+        "name": "Ghaziabad",
+        "coords": {
+          "lat": 28.4532,
+          "lng": 77.5487
+        }
+      },
+      {
+        "name": "Aligarh Jn",
+        "coords": {
+          "lat": 28.2926,
+          "lng": 77.8885
+        }
+      },
+      {
+        "name": "Tundla",
+        "coords": {
+          "lat": 28.1319,
+          "lng": 78.2282
+        }
+      },
+      {
+        "name": "Etawah",
+        "coords": {
+          "lat": 27.9713,
+          "lng": 78.568
+        }
+      },
+      {
+        "name": "Phaphund",
+        "coords": {
+          "lat": 27.8106,
+          "lng": 78.9077
+        }
+      },
+      {
+        "name": "Kanpur Central",
+        "coords": {
+          "lat": 27.65,
+          "lng": 79.2475
+        }
+      },
+      {
+        "name": "Unnao",
+        "coords": {
+          "lat": 27.4893,
+          "lng": 79.5872
+        }
+      },
+      {
+        "name": "Aishbagh",
+        "coords": {
+          "lat": 27.3287,
+          "lng": 79.927
+        }
+      },
+      {
+        "name": "Lucknow City",
+        "coords": {
+          "lat": 27.168,
+          "lng": 80.2667
+        }
+      },
+      {
+        "name": "Lucknow NR",
+        "coords": {
+          "lat": 27.0074,
+          "lng": 80.6065
+        }
+      },
+      {
+        "name": "Lucknow",
+        "coords": {
+          "lat": 26.8467,
+          "lng": 80.9462
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 28.4532,
+      "lng": 77.5487,
+      "station": "Ghaziabad"
+    }
+  },
+  {
+    "trainNumber": "12627",
+    "trainName": "Karnataka Express",
+    "stations": [
+      {
+        "name": "Bangalore",
+        "coords": {
+          "lat": 12.9716,
+          "lng": 77.5946
+        }
+      },
+      {
+        "name": "Yelahanka",
+        "coords": {
+          "lat": 13.6234,
+          "lng": 77.5785
+        }
+      },
+      {
+        "name": "Hindupur",
+        "coords": {
+          "lat": 14.2751,
+          "lng": 77.5625
+        }
+      },
+      {
+        "name": "Dharmavaram",
+        "coords": {
+          "lat": 14.9269,
+          "lng": 77.5464
+        }
+      },
+      {
+        "name": "Anantapur",
+        "coords": {
+          "lat": 15.5786,
+          "lng": 77.5303
+        }
+      },
+      {
+        "name": "Guntakal",
+        "coords": {
+          "lat": 16.2304,
+          "lng": 77.5143
+        }
+      },
+      {
+        "name": "Raichur",
+        "coords": {
+          "lat": 16.8822,
+          "lng": 77.4982
+        }
+      },
+      {
+        "name": "Wadi",
+        "coords": {
+          "lat": 17.5339,
+          "lng": 77.4821
+        }
+      },
+      {
+        "name": "Solapur",
+        "coords": {
+          "lat": 18.1857,
+          "lng": 77.4661
+        }
+      },
+      {
+        "name": "Daund",
+        "coords": {
+          "lat": 18.8375,
+          "lng": 77.45
+        }
+      },
+      {
+        "name": "Ahmednagar",
+        "coords": {
+          "lat": 19.4892,
+          "lng": 77.4339
+        }
+      },
+      {
+        "name": "Belapur",
+        "coords": {
+          "lat": 20.141,
+          "lng": 77.4179
+        }
+      },
+      {
+        "name": "Kopargaon",
+        "coords": {
+          "lat": 20.7928,
+          "lng": 77.4018
+        }
+      },
+      {
+        "name": "Manmad",
+        "coords": {
+          "lat": 21.4445,
+          "lng": 77.3857
+        }
+      },
+      {
+        "name": "Bhusaval",
+        "coords": {
+          "lat": 22.0963,
+          "lng": 77.3697
+        }
+      },
+      {
+        "name": "Burhanpur",
+        "coords": {
+          "lat": 22.748,
+          "lng": 77.3536
+        }
+      },
+      {
+        "name": "Khandwa",
+        "coords": {
+          "lat": 23.3998,
+          "lng": 77.3375
+        }
+      },
+      {
+        "name": "Itarsi",
+        "coords": {
+          "lat": 24.0516,
+          "lng": 77.3215
+        }
+      },
+      {
+        "name": "Bhopal",
+        "coords": {
+          "lat": 24.7033,
+          "lng": 77.3054
+        }
+      },
+      {
+        "name": "Bina",
+        "coords": {
+          "lat": 25.3551,
+          "lng": 77.2893
+        }
+      },
+      {
+        "name": "Jhansi",
+        "coords": {
+          "lat": 26.0069,
+          "lng": 77.2733
+        }
+      },
+      {
+        "name": "Gwalior",
+        "coords": {
+          "lat": 26.6586,
+          "lng": 77.2572
+        }
+      },
+      {
+        "name": "Agra Cantt",
+        "coords": {
+          "lat": 27.3104,
+          "lng": 77.2411
+        }
+      },
+      {
+        "name": "Mathura",
+        "coords": {
+          "lat": 27.9621,
+          "lng": 77.2251
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 13.6234,
+      "lng": 77.5785,
+      "station": "Yelahanka"
+    }
+  },
+  {
+    "trainNumber": "12841",
+    "trainName": "Coromandel Express",
+    "stations": [
+      {
+        "name": "Howrah",
+        "coords": {
+          "lat": 22.5855,
+          "lng": 88.3426
+        }
+      },
+      {
+        "name": "Santragachi",
+        "coords": {
+          "lat": 22.0854,
+          "lng": 87.9178
+        }
+      },
+      {
+        "name": "Kharagpur",
+        "coords": {
+          "lat": 21.5852,
+          "lng": 87.4929
+        }
+      },
+      {
+        "name": "Balasore",
+        "coords": {
+          "lat": 21.0851,
+          "lng": 87.0681
+        }
+      },
+      {
+        "name": "Bhadrak",
+        "coords": {
+          "lat": 20.5849,
+          "lng": 86.6433
+        }
+      },
+      {
+        "name": "Jajpur K Road",
+        "coords": {
+          "lat": 20.0848,
+          "lng": 86.2184
+        }
+      },
+      {
+        "name": "Cuttack",
+        "coords": {
+          "lat": 19.5846,
+          "lng": 85.7936
+        }
+      },
+      {
+        "name": "Bhubaneswar",
+        "coords": {
+          "lat": 19.0845,
+          "lng": 85.3687
+        }
+      },
+      {
+        "name": "Khurda Road",
+        "coords": {
+          "lat": 18.5843,
+          "lng": 84.9439
+        }
+      },
+      {
+        "name": "Brahmapur",
+        "coords": {
+          "lat": 18.0842,
+          "lng": 84.5191
+        }
+      },
+      {
+        "name": "Palasa",
+        "coords": {
+          "lat": 17.584,
+          "lng": 84.0942
+        }
+      },
+      {
+        "name": "Srikakulam",
+        "coords": {
+          "lat": 17.0839,
+          "lng": 83.6694
+        }
+      },
+      {
+        "name": "Vizianagaram",
+        "coords": {
+          "lat": 16.5837,
+          "lng": 83.2446
+        }
+      },
+      {
+        "name": "Visakhapatnam",
+        "coords": {
+          "lat": 16.0836,
+          "lng": 82.8197
+        }
+      },
+      {
+        "name": "Rajahmundry",
+        "coords": {
+          "lat": 15.5834,
+          "lng": 82.3949
+        }
+      },
+      {
+        "name": "Eluru",
+        "coords": {
+          "lat": 15.0833,
+          "lng": 81.97
+        }
+      },
+      {
+        "name": "Vijayawada",
+        "coords": {
+          "lat": 14.5831,
+          "lng": 81.5452
+        }
+      },
+      {
+        "name": "Ongole",
+        "coords": {
+          "lat": 14.083,
+          "lng": 81.1204
+        }
+      },
+      {
+        "name": "Nellore",
+        "coords": {
+          "lat": 13.5828,
+          "lng": 80.6955
+        }
+      },
+      {
+        "name": "Chennai Central",
+        "coords": {
+          "lat": 13.0827,
+          "lng": 80.2707
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 22.0854,
+      "lng": 87.9178,
+      "station": "Santragachi"
+    }
+  },
+  {
+    "trainNumber": "12615",
+    "trainName": "Grand Trunk Express",
+    "stations": [
+      {
+        "name": "Chennai Central",
+        "coords": {
+          "lat": 13.0827,
+          "lng": 80.2707
+        }
+      },
+      {
+        "name": "Gudur",
+        "coords": {
+          "lat": 13.5837,
+          "lng": 80.1719
+        }
+      },
+      {
+        "name": "Nellore",
+        "coords": {
+          "lat": 14.0847,
+          "lng": 80.0732
+        }
+      },
+      {
+        "name": "Ongole",
+        "coords": {
+          "lat": 14.5857,
+          "lng": 79.9744
+        }
+      },
+      {
+        "name": "Chirala",
+        "coords": {
+          "lat": 15.0867,
+          "lng": 79.8756
+        }
+      },
+      {
+        "name": "Bapatla",
+        "coords": {
+          "lat": 15.5877,
+          "lng": 79.7769
+        }
+      },
+      {
+        "name": "Tenali",
+        "coords": {
+          "lat": 16.0887,
+          "lng": 79.6781
+        }
+      },
+      {
+        "name": "Vijayawada",
+        "coords": {
+          "lat": 16.5897,
+          "lng": 79.5793
+        }
+      },
+      {
+        "name": "Khammam",
+        "coords": {
+          "lat": 17.0908,
+          "lng": 79.4806
+        }
+      },
+      {
+        "name": "Warangal",
+        "coords": {
+          "lat": 17.5918,
+          "lng": 79.3818
+        }
+      },
+      {
+        "name": "Ramagundam",
+        "coords": {
+          "lat": 18.0928,
+          "lng": 79.2831
+        }
+      },
+      {
+        "name": "Manchiryal",
+        "coords": {
+          "lat": 18.5938,
+          "lng": 79.1843
+        }
+      },
+      {
+        "name": "Sirpur Kaghaznagar",
+        "coords": {
+          "lat": 19.0948,
+          "lng": 79.0855
+        }
+      },
+      {
+        "name": "Balharshah",
+        "coords": {
+          "lat": 19.5958,
+          "lng": 78.9868
+        }
+      },
+      {
+        "name": "Chandrapur",
+        "coords": {
+          "lat": 20.0968,
+          "lng": 78.888
+        }
+      },
+      {
+        "name": "Sevagram",
+        "coords": {
+          "lat": 20.5978,
+          "lng": 78.7892
+        }
+      },
+      {
+        "name": "Nagpur",
+        "coords": {
+          "lat": 21.0988,
+          "lng": 78.6905
+        }
+      },
+      {
+        "name": "Pandhurna",
+        "coords": {
+          "lat": 21.5998,
+          "lng": 78.5917
+        }
+      },
+      {
+        "name": "Betul",
+        "coords": {
+          "lat": 22.1008,
+          "lng": 78.4929
+        }
+      },
+      {
+        "name": "Itarsi",
+        "coords": {
+          "lat": 22.6018,
+          "lng": 78.3942
+        }
+      },
+      {
+        "name": "Hoshangabad",
+        "coords": {
+          "lat": 23.1028,
+          "lng": 78.2954
+        }
+      },
+      {
+        "name": "Bhopal",
+        "coords": {
+          "lat": 23.6038,
+          "lng": 78.1966
+        }
+      },
+      {
+        "name": "Vidisha",
+        "coords": {
+          "lat": 24.1048,
+          "lng": 78.0979
+        }
+      },
+      {
+        "name": "Bina",
+        "coords": {
+          "lat": 24.6058,
+          "lng": 77.9991
+        }
+      },
+      {
+        "name": "Jhansi",
+        "coords": {
+          "lat": 25.1069,
+          "lng": 77.9004
+        }
+      },
+      {
+        "name": "Gwalior",
+        "coords": {
+          "lat": 25.6079,
+          "lng": 77.8016
+        }
+      },
+      {
+        "name": "Morena",
+        "coords": {
+          "lat": 26.1089,
+          "lng": 77.7028
+        }
+      },
+      {
+        "name": "Dholpur",
+        "coords": {
+          "lat": 26.6099,
+          "lng": 77.6041
+        }
+      },
+      {
+        "name": "Agra Cantt",
+        "coords": {
+          "lat": 27.1109,
+          "lng": 77.5053
+        }
+      },
+      {
+        "name": "Mathura",
+        "coords": {
+          "lat": 27.6119,
+          "lng": 77.4065
+        }
+      },
+      {
+        "name": "Faridabad",
+        "coords": {
+          "lat": 28.1129,
+          "lng": 77.3078
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 13.5837,
+      "lng": 80.1719,
+      "station": "Gudur"
+    }
+  },
+  {
+    "trainNumber": "12723",
+    "trainName": "Telangana Express",
+    "stations": [
+      {
+        "name": "Hyderabad Decan",
+        "coords": {
+          "lat": 17.385,
+          "lng": 78.4867
+        }
+      },
+      {
+        "name": "Secunderabad",
+        "coords": {
+          "lat": 17.9464,
+          "lng": 78.4228
+        }
+      },
+      {
+        "name": "Kazipet",
+        "coords": {
+          "lat": 18.5079,
+          "lng": 78.3589
+        }
+      },
+      {
+        "name": "Ramagundam",
+        "coords": {
+          "lat": 19.0693,
+          "lng": 78.295
+        }
+      },
+      {
+        "name": "Manchiryal",
+        "coords": {
+          "lat": 19.6308,
+          "lng": 78.2312
+        }
+      },
+      {
+        "name": "Bellampalli",
+        "coords": {
+          "lat": 20.1922,
+          "lng": 78.1673
+        }
+      },
+      {
+        "name": "Sirpur Kaghaznagar",
+        "coords": {
+          "lat": 20.7537,
+          "lng": 78.1034
+        }
+      },
+      {
+        "name": "Balharshah",
+        "coords": {
+          "lat": 21.3151,
+          "lng": 78.0395
+        }
+      },
+      {
+        "name": "Chandrapur",
+        "coords": {
+          "lat": 21.8766,
+          "lng": 77.9756
+        }
+      },
+      {
+        "name": "Sevagram",
+        "coords": {
+          "lat": 22.438,
+          "lng": 77.9117
+        }
+      },
+      {
+        "name": "Nagpur",
+        "coords": {
+          "lat": 22.9995,
+          "lng": 77.8478
+        }
+      },
+      {
+        "name": "Pandhurna",
+        "coords": {
+          "lat": 23.5609,
+          "lng": 77.784
+        }
+      },
+      {
+        "name": "Betul",
+        "coords": {
+          "lat": 24.1223,
+          "lng": 77.7201
+        }
+      },
+      {
+        "name": "Itarsi",
+        "coords": {
+          "lat": 24.6838,
+          "lng": 77.6562
+        }
+      },
+      {
+        "name": "Bhopal",
+        "coords": {
+          "lat": 25.2452,
+          "lng": 77.5923
+        }
+      },
+      {
+        "name": "Bina",
+        "coords": {
+          "lat": 25.8067,
+          "lng": 77.5284
+        }
+      },
+      {
+        "name": "Jhansi",
+        "coords": {
+          "lat": 26.3681,
+          "lng": 77.4645
+        }
+      },
+      {
+        "name": "Gwalior",
+        "coords": {
+          "lat": 26.9296,
+          "lng": 77.4007
+        }
+      },
+      {
+        "name": "Agra Cantt",
+        "coords": {
+          "lat": 27.491,
+          "lng": 77.3368
+        }
+      },
+      {
+        "name": "Mathura",
+        "coords": {
+          "lat": 28.0525,
+          "lng": 77.2729
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 17.9464,
+      "lng": 78.4228,
+      "station": "Secunderabad"
+    }
+  },
+  {
+    "trainNumber": "11019",
+    "trainName": "Konark Express",
+    "stations": [
+      {
+        "name": "Mumbai CSMT",
+        "coords": {
+          "lat": 18.94,
+          "lng": 72.8353
+        }
+      },
+      {
+        "name": "Dadar",
+        "coords": {
+          "lat": 18.9902,
+          "lng": 73.3164
+        }
+      },
+      {
+        "name": "Kalyan",
+        "coords": {
+          "lat": 19.0405,
+          "lng": 73.7975
+        }
+      },
+      {
+        "name": "Lonavala",
+        "coords": {
+          "lat": 19.0907,
+          "lng": 74.2785
+        }
+      },
+      {
+        "name": "Pune",
+        "coords": {
+          "lat": 19.1409,
+          "lng": 74.7596
+        }
+      },
+      {
+        "name": "Daund",
+        "coords": {
+          "lat": 19.1911,
+          "lng": 75.2407
+        }
+      },
+      {
+        "name": "Kurduvadi",
+        "coords": {
+          "lat": 19.2414,
+          "lng": 75.7218
+        }
+      },
+      {
+        "name": "Solapur",
+        "coords": {
+          "lat": 19.2916,
+          "lng": 76.2029
+        }
+      },
+      {
+        "name": "Kalaburagi",
+        "coords": {
+          "lat": 19.3418,
+          "lng": 76.684
+        }
+      },
+      {
+        "name": "Wadi",
+        "coords": {
+          "lat": 19.392,
+          "lng": 77.165
+        }
+      },
+      {
+        "name": "Seram",
+        "coords": {
+          "lat": 19.4423,
+          "lng": 77.6461
+        }
+      },
+      {
+        "name": "Tandur",
+        "coords": {
+          "lat": 19.4925,
+          "lng": 78.1272
+        }
+      },
+      {
+        "name": "Vikarabad",
+        "coords": {
+          "lat": 19.5427,
+          "lng": 78.6083
+        }
+      },
+      {
+        "name": "Secunderabad",
+        "coords": {
+          "lat": 19.5929,
+          "lng": 79.0894
+        }
+      },
+      {
+        "name": "Kazipet",
+        "coords": {
+          "lat": 19.6432,
+          "lng": 79.5704
+        }
+      },
+      {
+        "name": "Warangal",
+        "coords": {
+          "lat": 19.6934,
+          "lng": 80.0515
+        }
+      },
+      {
+        "name": "Mahbubabad",
+        "coords": {
+          "lat": 19.7436,
+          "lng": 80.5326
+        }
+      },
+      {
+        "name": "Khammam",
+        "coords": {
+          "lat": 19.7938,
+          "lng": 81.0137
+        }
+      },
+      {
+        "name": "Vijayawada",
+        "coords": {
+          "lat": 19.8441,
+          "lng": 81.4948
+        }
+      },
+      {
+        "name": "Eluru",
+        "coords": {
+          "lat": 19.8943,
+          "lng": 81.9758
+        }
+      },
+      {
+        "name": "Rajahmundry",
+        "coords": {
+          "lat": 19.9445,
+          "lng": 82.4569
+        }
+      },
+      {
+        "name": "Visakhapatnam",
+        "coords": {
+          "lat": 19.9947,
+          "lng": 82.938
+        }
+      },
+      {
+        "name": "Vizianagaram",
+        "coords": {
+          "lat": 20.045,
+          "lng": 83.4191
+        }
+      },
+      {
+        "name": "Srikakulam",
+        "coords": {
+          "lat": 20.0952,
+          "lng": 83.9002
+        }
+      },
+      {
+        "name": "Palasa",
+        "coords": {
+          "lat": 20.1454,
+          "lng": 84.3813
+        }
+      },
+      {
+        "name": "Brahmapur",
+        "coords": {
+          "lat": 20.1956,
+          "lng": 84.8623
+        }
+      },
+      {
+        "name": "Khurda Road",
+        "coords": {
+          "lat": 20.2459,
+          "lng": 85.3434
+        }
+      },
+      {
+        "name": "Bhubaneswar",
+        "coords": {
+          "lat": 20.2961,
+          "lng": 85.8245
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 18.9902,
+      "lng": 73.3164,
+      "station": "Dadar"
+    }
+  },
+  {
+    "trainNumber": "12137",
+    "trainName": "Punjab Mail",
+    "stations": [
+      {
+        "name": "Mumbai CSMT",
+        "coords": {
+          "lat": 18.94,
+          "lng": 72.8353
+        }
+      },
+      {
+        "name": "Dadar",
+        "coords": {
+          "lat": 19.2729,
+          "lng": 72.8846
+        }
+      },
+      {
+        "name": "Kalyan",
+        "coords": {
+          "lat": 19.6057,
+          "lng": 72.9339
+        }
+      },
+      {
+        "name": "Kasara",
+        "coords": {
+          "lat": 19.9386,
+          "lng": 72.9833
+        }
+      },
+      {
+        "name": "Igatpuri",
+        "coords": {
+          "lat": 20.2715,
+          "lng": 73.0326
+        }
+      },
+      {
+        "name": "Nashik Road",
+        "coords": {
+          "lat": 20.6043,
+          "lng": 73.0819
+        }
+      },
+      {
+        "name": "Manmad",
+        "coords": {
+          "lat": 20.9372,
+          "lng": 73.1312
+        }
+      },
+      {
+        "name": "Jalgaon",
+        "coords": {
+          "lat": 21.27,
+          "lng": 73.1805
+        }
+      },
+      {
+        "name": "Bhusaval",
+        "coords": {
+          "lat": 21.6029,
+          "lng": 73.2299
+        }
+      },
+      {
+        "name": "Burhanpur",
+        "coords": {
+          "lat": 21.9358,
+          "lng": 73.2792
+        }
+      },
+      {
+        "name": "Khandwa",
+        "coords": {
+          "lat": 22.2686,
+          "lng": 73.3285
+        }
+      },
+      {
+        "name": "Harda",
+        "coords": {
+          "lat": 22.6015,
+          "lng": 73.3778
+        }
+      },
+      {
+        "name": "Itarsi",
+        "coords": {
+          "lat": 22.9344,
+          "lng": 73.4271
+        }
+      },
+      {
+        "name": "Hoshangabad",
+        "coords": {
+          "lat": 23.2672,
+          "lng": 73.4765
+        }
+      },
+      {
+        "name": "Bhopal",
+        "coords": {
+          "lat": 23.6001,
+          "lng": 73.5258
+        }
+      },
+      {
+        "name": "Vidisha",
+        "coords": {
+          "lat": 23.933,
+          "lng": 73.5751
+        }
+      },
+      {
+        "name": "Ganj Basoda",
+        "coords": {
+          "lat": 24.2658,
+          "lng": 73.6244
+        }
+      },
+      {
+        "name": "Bina",
+        "coords": {
+          "lat": 24.5987,
+          "lng": 73.6737
+        }
+      },
+      {
+        "name": "Lalitpur",
+        "coords": {
+          "lat": 24.9316,
+          "lng": 73.7231
+        }
+      },
+      {
+        "name": "Jhansi",
+        "coords": {
+          "lat": 25.2644,
+          "lng": 73.7724
+        }
+      },
+      {
+        "name": "Datia",
+        "coords": {
+          "lat": 25.5973,
+          "lng": 73.8217
+        }
+      },
+      {
+        "name": "Dabra",
+        "coords": {
+          "lat": 25.9301,
+          "lng": 73.871
+        }
+      },
+      {
+        "name": "Gwalior",
+        "coords": {
+          "lat": 26.263,
+          "lng": 73.9203
+        }
+      },
+      {
+        "name": "Morena",
+        "coords": {
+          "lat": 26.5959,
+          "lng": 73.9696
+        }
+      },
+      {
+        "name": "Dholpur",
+        "coords": {
+          "lat": 26.9287,
+          "lng": 74.019
+        }
+      },
+      {
+        "name": "Agra Cantt",
+        "coords": {
+          "lat": 27.2616,
+          "lng": 74.0683
+        }
+      },
+      {
+        "name": "Raja Ki Mandi",
+        "coords": {
+          "lat": 27.5945,
+          "lng": 74.1176
+        }
+      },
+      {
+        "name": "Mathura",
+        "coords": {
+          "lat": 27.9273,
+          "lng": 74.1669
+        }
+      },
+      {
+        "name": "Faridabad",
+        "coords": {
+          "lat": 28.2602,
+          "lng": 74.2162
+        }
+      },
+      {
+        "name": "Hazrat Nizamuddin",
+        "coords": {
+          "lat": 28.5931,
+          "lng": 74.2656
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.9259,
+          "lng": 74.3149
+        }
+      },
+      {
+        "name": "Rohtak",
+        "coords": {
+          "lat": 29.2588,
+          "lng": 74.3642
+        }
+      },
+      {
+        "name": "Jind",
+        "coords": {
+          "lat": 29.5916,
+          "lng": 74.4135
+        }
+      },
+      {
+        "name": "Jakhal",
+        "coords": {
+          "lat": 29.9245,
+          "lng": 74.4628
+        }
+      },
+      {
+        "name": "Bhatinda",
+        "coords": {
+          "lat": 30.2574,
+          "lng": 74.5122
+        }
+      },
+      {
+        "name": "Faridkot",
+        "coords": {
+          "lat": 30.5902,
+          "lng": 74.5615
+        }
+      },
+      {
+        "name": "Firozpur Cantt",
+        "coords": {
+          "lat": 30.9231,
+          "lng": 74.6108
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 19.2729,
+      "lng": 72.8846,
+      "station": "Dadar"
+    }
+  },
+  {
+    "trainNumber": "12431",
+    "trainName": "Trivandrum Rajdhani",
+    "stations": [
+      {
+        "name": "Trivandrum Central",
+        "coords": {
+          "lat": 8.5241,
+          "lng": 76.9366
+        }
+      },
+      {
+        "name": "Kollam",
+        "coords": {
+          "lat": 9.5273,
+          "lng": 76.9524
+        }
+      },
+      {
+        "name": "Alappuzha",
+        "coords": {
+          "lat": 10.5306,
+          "lng": 76.9682
+        }
+      },
+      {
+        "name": "Ernakulam Jn",
+        "coords": {
+          "lat": 11.5338,
+          "lng": 76.984
+        }
+      },
+      {
+        "name": "Thrissur",
+        "coords": {
+          "lat": 12.537,
+          "lng": 76.9998
+        }
+      },
+      {
+        "name": "Shoranur",
+        "coords": {
+          "lat": 13.5403,
+          "lng": 77.0156
+        }
+      },
+      {
+        "name": "Kozhikode",
+        "coords": {
+          "lat": 14.5435,
+          "lng": 77.0314
+        }
+      },
+      {
+        "name": "Kannur",
+        "coords": {
+          "lat": 15.5467,
+          "lng": 77.0472
+        }
+      },
+      {
+        "name": "Kasaragod",
+        "coords": {
+          "lat": 16.55,
+          "lng": 77.063
+        }
+      },
+      {
+        "name": "Mangaluru Jn",
+        "coords": {
+          "lat": 17.5532,
+          "lng": 77.0788
+        }
+      },
+      {
+        "name": "Udupi",
+        "coords": {
+          "lat": 18.5564,
+          "lng": 77.0946
+        }
+      },
+      {
+        "name": "Karwar",
+        "coords": {
+          "lat": 19.5597,
+          "lng": 77.1104
+        }
+      },
+      {
+        "name": "Madgaon",
+        "coords": {
+          "lat": 20.5629,
+          "lng": 77.1262
+        }
+      },
+      {
+        "name": "Ratnagiri",
+        "coords": {
+          "lat": 21.5662,
+          "lng": 77.142
+        }
+      },
+      {
+        "name": "Panvel",
+        "coords": {
+          "lat": 22.5694,
+          "lng": 77.1578
+        }
+      },
+      {
+        "name": "Vasai Road",
+        "coords": {
+          "lat": 23.5726,
+          "lng": 77.1736
+        }
+      },
+      {
+        "name": "Surat",
+        "coords": {
+          "lat": 24.5759,
+          "lng": 77.1894
+        }
+      },
+      {
+        "name": "Vadodara",
+        "coords": {
+          "lat": 25.5791,
+          "lng": 77.2052
+        }
+      },
+      {
+        "name": "Ratlam",
+        "coords": {
+          "lat": 26.5823,
+          "lng": 77.221
+        }
+      },
+      {
+        "name": "Kota",
+        "coords": {
+          "lat": 27.5856,
+          "lng": 77.2368
+        }
+      },
+      {
+        "name": "Hazrat Nizamuddin",
+        "coords": {
+          "lat": 28.5888,
+          "lng": 77.2526
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 9.5273,
+      "lng": 76.9524,
+      "station": "Kollam"
+    }
+  },
+  {
+    "trainNumber": "12903",
+    "trainName": "Golden Temple Mail",
+    "stations": [
+      {
+        "name": "Mumbai Central",
+        "coords": {
+          "lat": 19.076,
+          "lng": 72.8777
+        }
+      },
+      {
+        "name": "Borivali",
+        "coords": {
+          "lat": 19.5411,
+          "lng": 72.9516
+        }
+      },
+      {
+        "name": "Surat",
+        "coords": {
+          "lat": 20.0062,
+          "lng": 73.0254
+        }
+      },
+      {
+        "name": "Vadodara",
+        "coords": {
+          "lat": 20.4713,
+          "lng": 73.0993
+        }
+      },
+      {
+        "name": "Ratlam",
+        "coords": {
+          "lat": 20.9364,
+          "lng": 73.1732
+        }
+      },
+      {
+        "name": "Nagda",
+        "coords": {
+          "lat": 21.4016,
+          "lng": 73.2471
+        }
+      },
+      {
+        "name": "Shamgarh",
+        "coords": {
+          "lat": 21.8667,
+          "lng": 73.3209
+        }
+      },
+      {
+        "name": "Bhawani Mandi",
+        "coords": {
+          "lat": 22.3318,
+          "lng": 73.3948
+        }
+      },
+      {
+        "name": "Ramganj Mandi",
+        "coords": {
+          "lat": 22.7969,
+          "lng": 73.4687
+        }
+      },
+      {
+        "name": "Kota",
+        "coords": {
+          "lat": 23.262,
+          "lng": 73.5426
+        }
+      },
+      {
+        "name": "Sawai Madhopur",
+        "coords": {
+          "lat": 23.7271,
+          "lng": 73.6164
+        }
+      },
+      {
+        "name": "Gangapur City",
+        "coords": {
+          "lat": 24.1922,
+          "lng": 73.6903
+        }
+      },
+      {
+        "name": "Hindaun City",
+        "coords": {
+          "lat": 24.6573,
+          "lng": 73.7642
+        }
+      },
+      {
+        "name": "Bayana",
+        "coords": {
+          "lat": 25.1224,
+          "lng": 73.8381
+        }
+      },
+      {
+        "name": "Bharatpur",
+        "coords": {
+          "lat": 25.5876,
+          "lng": 73.9119
+        }
+      },
+      {
+        "name": "Mathura",
+        "coords": {
+          "lat": 26.0527,
+          "lng": 73.9858
+        }
+      },
+      {
+        "name": "Faridabad",
+        "coords": {
+          "lat": 26.5178,
+          "lng": 74.0597
+        }
+      },
+      {
+        "name": "Hazrat Nizamuddin",
+        "coords": {
+          "lat": 26.9829,
+          "lng": 74.1336
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 27.448,
+          "lng": 74.2074
+        }
+      },
+      {
+        "name": "Ghaziabad",
+        "coords": {
+          "lat": 27.9131,
+          "lng": 74.2813
+        }
+      },
+      {
+        "name": "Meerut City",
+        "coords": {
+          "lat": 28.3782,
+          "lng": 74.3552
+        }
+      },
+      {
+        "name": "Muzaffarnagar",
+        "coords": {
+          "lat": 28.8433,
+          "lng": 74.4291
+        }
+      },
+      {
+        "name": "Saharanpur",
+        "coords": {
+          "lat": 29.3084,
+          "lng": 74.5029
+        }
+      },
+      {
+        "name": "Ambala Cantt",
+        "coords": {
+          "lat": 29.7736,
+          "lng": 74.5768
+        }
+      },
+      {
+        "name": "Ludhiana",
+        "coords": {
+          "lat": 30.2387,
+          "lng": 74.6507
+        }
+      },
+      {
+        "name": "Jalandhar City",
+        "coords": {
+          "lat": 30.7038,
+          "lng": 74.7246
+        }
+      },
+      {
+        "name": "Beas",
+        "coords": {
+          "lat": 31.1689,
+          "lng": 74.7984
+        }
+      },
+      {
+        "name": "Amritsar",
+        "coords": {
+          "lat": 31.634,
+          "lng": 74.8723
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 19.5411,
+      "lng": 72.9516,
+      "station": "Borivali"
+    }
+  },
+  {
+    "trainNumber": "12309",
+    "trainName": "Patna Rajdhani",
+    "stations": [
+      {
+        "name": "Rajendra Nagar T",
+        "coords": {
+          "lat": 25.5999,
+          "lng": 85.1668
+        }
+      },
+      {
+        "name": "Patna Jn",
+        "coords": {
+          "lat": 25.8739,
+          "lng": 84.4434
+        }
+      },
+      {
+        "name": "Danapur",
+        "coords": {
+          "lat": 26.1479,
+          "lng": 83.7199
+        }
+      },
+      {
+        "name": "Ara",
+        "coords": {
+          "lat": 26.4219,
+          "lng": 82.9965
+        }
+      },
+      {
+        "name": "Buxar",
+        "coords": {
+          "lat": 26.6959,
+          "lng": 82.2731
+        }
+      },
+      {
+        "name": "Pt. DD Upadhyaya",
+        "coords": {
+          "lat": 26.9699,
+          "lng": 81.5496
+        }
+      },
+      {
+        "name": "Prayagraj Jn",
+        "coords": {
+          "lat": 27.2439,
+          "lng": 80.8262
+        }
+      },
+      {
+        "name": "Kanpur Central",
+        "coords": {
+          "lat": 27.5179,
+          "lng": 80.1027
+        }
+      },
+      {
+        "name": "Aligarh Jn",
+        "coords": {
+          "lat": 27.7919,
+          "lng": 79.3793
+        }
+      },
+      {
+        "name": "Ghaziabad",
+        "coords": {
+          "lat": 28.0659,
+          "lng": 78.6559
+        }
+      },
+      {
+        "name": "Tilak Bridge",
+        "coords": {
+          "lat": 28.3399,
+          "lng": 77.9324
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 25.8739,
+      "lng": 84.4434,
+      "station": "Patna Jn"
+    }
+  },
+  {
+    "trainNumber": "12007",
+    "trainName": "Chennai Mysore Shatabdi",
+    "stations": [
+      {
+        "name": "Chennai Central",
+        "coords": {
+          "lat": 13.0827,
+          "lng": 80.2707
+        }
+      },
+      {
+        "name": "Arakkonam",
+        "coords": {
+          "lat": 13.0302,
+          "lng": 80.0286
+        }
+      },
+      {
+        "name": "Katpadi",
+        "coords": {
+          "lat": 12.9778,
+          "lng": 79.7865
+        }
+      },
+      {
+        "name": "Jolarpettai",
+        "coords": {
+          "lat": 12.9253,
+          "lng": 79.5444
+        }
+      },
+      {
+        "name": "Bangarapet",
+        "coords": {
+          "lat": 12.8729,
+          "lng": 79.3024
+        }
+      },
+      {
+        "name": "Krishnarajapuram",
+        "coords": {
+          "lat": 12.8204,
+          "lng": 79.0603
+        }
+      },
+      {
+        "name": "Bangalore Cantt",
+        "coords": {
+          "lat": 12.7679,
+          "lng": 78.8182
+        }
+      },
+      {
+        "name": "KSR Bangalore",
+        "coords": {
+          "lat": 12.7155,
+          "lng": 78.5761
+        }
+      },
+      {
+        "name": "Kengeri",
+        "coords": {
+          "lat": 12.663,
+          "lng": 78.334
+        }
+      },
+      {
+        "name": "Bidadi",
+        "coords": {
+          "lat": 12.6106,
+          "lng": 78.0919
+        }
+      },
+      {
+        "name": "Ramanagaram",
+        "coords": {
+          "lat": 12.5581,
+          "lng": 77.8498
+        }
+      },
+      {
+        "name": "Channapatna",
+        "coords": {
+          "lat": 12.5056,
+          "lng": 77.6077
+        }
+      },
+      {
+        "name": "Maddur",
+        "coords": {
+          "lat": 12.4532,
+          "lng": 77.3657
+        }
+      },
+      {
+        "name": "Mandya",
+        "coords": {
+          "lat": 12.4007,
+          "lng": 77.1236
+        }
+      },
+      {
+        "name": "Pandavapura",
+        "coords": {
+          "lat": 12.3483,
+          "lng": 76.8815
+        }
+      },
+      {
+        "name": "Mysore",
+        "coords": {
+          "lat": 12.2958,
+          "lng": 76.6394
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 13.0302,
+      "lng": 80.0286,
+      "station": "Arakkonam"
+    }
+  },
+  {
+    "trainNumber": "11077",
+    "trainName": "Jhelum Express",
+    "stations": [
+      {
+        "name": "Pune",
+        "coords": {
+          "lat": 18.5204,
+          "lng": 73.8567
+        }
+      },
+      {
+        "name": "Uruli",
+        "coords": {
+          "lat": 18.8164,
+          "lng": 73.8775
+        }
+      },
+      {
+        "name": "Daund",
+        "coords": {
+          "lat": 19.1123,
+          "lng": 73.8984
+        }
+      },
+      {
+        "name": "Ahmednagar",
+        "coords": {
+          "lat": 19.4083,
+          "lng": 73.9192
+        }
+      },
+      {
+        "name": "Belapur",
+        "coords": {
+          "lat": 19.7042,
+          "lng": 73.9401
+        }
+      },
+      {
+        "name": "Kopargaon",
+        "coords": {
+          "lat": 20.0002,
+          "lng": 73.9609
+        }
+      },
+      {
+        "name": "Manmad",
+        "coords": {
+          "lat": 20.2962,
+          "lng": 73.9817
+        }
+      },
+      {
+        "name": "Chalisgaon",
+        "coords": {
+          "lat": 20.5921,
+          "lng": 74.0026
+        }
+      },
+      {
+        "name": "Jalgaon",
+        "coords": {
+          "lat": 20.8881,
+          "lng": 74.0234
+        }
+      },
+      {
+        "name": "Bhusaval",
+        "coords": {
+          "lat": 21.1841,
+          "lng": 74.0443
+        }
+      },
+      {
+        "name": "Burhanpur",
+        "coords": {
+          "lat": 21.48,
+          "lng": 74.0651
+        }
+      },
+      {
+        "name": "Khandwa",
+        "coords": {
+          "lat": 21.776,
+          "lng": 74.0859
+        }
+      },
+      {
+        "name": "Harda",
+        "coords": {
+          "lat": 22.0719,
+          "lng": 74.1068
+        }
+      },
+      {
+        "name": "Itarsi",
+        "coords": {
+          "lat": 22.3679,
+          "lng": 74.1276
+        }
+      },
+      {
+        "name": "Hoshangabad",
+        "coords": {
+          "lat": 22.6639,
+          "lng": 74.1485
+        }
+      },
+      {
+        "name": "Bhopal",
+        "coords": {
+          "lat": 22.9598,
+          "lng": 74.1693
+        }
+      },
+      {
+        "name": "Vidisha",
+        "coords": {
+          "lat": 23.2558,
+          "lng": 74.1901
+        }
+      },
+      {
+        "name": "Ganj Basoda",
+        "coords": {
+          "lat": 23.5518,
+          "lng": 74.211
+        }
+      },
+      {
+        "name": "Bina",
+        "coords": {
+          "lat": 23.8477,
+          "lng": 74.2318
+        }
+      },
+      {
+        "name": "Lalitpur",
+        "coords": {
+          "lat": 24.1437,
+          "lng": 74.2527
+        }
+      },
+      {
+        "name": "Jhansi",
+        "coords": {
+          "lat": 24.4397,
+          "lng": 74.2735
+        }
+      },
+      {
+        "name": "Datia",
+        "coords": {
+          "lat": 24.7356,
+          "lng": 74.2943
+        }
+      },
+      {
+        "name": "Dabra",
+        "coords": {
+          "lat": 25.0316,
+          "lng": 74.3152
+        }
+      },
+      {
+        "name": "Gwalior",
+        "coords": {
+          "lat": 25.3275,
+          "lng": 74.336
+        }
+      },
+      {
+        "name": "Morena",
+        "coords": {
+          "lat": 25.6235,
+          "lng": 74.3569
+        }
+      },
+      {
+        "name": "Dholpur",
+        "coords": {
+          "lat": 25.9195,
+          "lng": 74.3777
+        }
+      },
+      {
+        "name": "Agra Cantt",
+        "coords": {
+          "lat": 26.2154,
+          "lng": 74.3985
+        }
+      },
+      {
+        "name": "Raja Ki Mandi",
+        "coords": {
+          "lat": 26.5114,
+          "lng": 74.4194
+        }
+      },
+      {
+        "name": "Mathura",
+        "coords": {
+          "lat": 26.8073,
+          "lng": 74.4402
+        }
+      },
+      {
+        "name": "Faridabad",
+        "coords": {
+          "lat": 27.1033,
+          "lng": 74.461
+        }
+      },
+      {
+        "name": "Hazrat Nizamuddin",
+        "coords": {
+          "lat": 27.3993,
+          "lng": 74.4819
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 27.6952,
+          "lng": 74.5027
+        }
+      },
+      {
+        "name": "Subzi Mandi",
+        "coords": {
+          "lat": 27.9912,
+          "lng": 74.5236
+        }
+      },
+      {
+        "name": "Sonipat",
+        "coords": {
+          "lat": 28.2872,
+          "lng": 74.5444
+        }
+      },
+      {
+        "name": "Panipat",
+        "coords": {
+          "lat": 28.5831,
+          "lng": 74.5652
+        }
+      },
+      {
+        "name": "Karnal",
+        "coords": {
+          "lat": 28.8791,
+          "lng": 74.5861
+        }
+      },
+      {
+        "name": "Kurukshetra",
+        "coords": {
+          "lat": 29.175,
+          "lng": 74.6069
+        }
+      },
+      {
+        "name": "Ambala Cantt",
+        "coords": {
+          "lat": 29.471,
+          "lng": 74.6278
+        }
+      },
+      {
+        "name": "Sirhind",
+        "coords": {
+          "lat": 29.767,
+          "lng": 74.6486
+        }
+      },
+      {
+        "name": "Khanna",
+        "coords": {
+          "lat": 30.0629,
+          "lng": 74.6694
+        }
+      },
+      {
+        "name": "Ludhiana",
+        "coords": {
+          "lat": 30.3589,
+          "lng": 74.6903
+        }
+      },
+      {
+        "name": "Phagwara",
+        "coords": {
+          "lat": 30.6549,
+          "lng": 74.7111
+        }
+      },
+      {
+        "name": "Jalandhar Cantt",
+        "coords": {
+          "lat": 30.9508,
+          "lng": 74.732
+        }
+      },
+      {
+        "name": "Dasuya",
+        "coords": {
+          "lat": 31.2468,
+          "lng": 74.7528
+        }
+      },
+      {
+        "name": "Mukerian",
+        "coords": {
+          "lat": 31.5427,
+          "lng": 74.7736
+        }
+      },
+      {
+        "name": "Pathankot Cantt",
+        "coords": {
+          "lat": 31.8387,
+          "lng": 74.7945
+        }
+      },
+      {
+        "name": "Kathua",
+        "coords": {
+          "lat": 32.1347,
+          "lng": 74.8153
+        }
+      },
+      {
+        "name": "Samba",
+        "coords": {
+          "lat": 32.4306,
+          "lng": 74.8362
+        }
+      },
+      {
+        "name": "Jammu Tawi",
+        "coords": {
+          "lat": 32.7266,
+          "lng": 74.857
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 18.8164,
+      "lng": 73.8775,
+      "station": "Uruli"
+    }
+  },
+  {
+    "trainNumber": "12423",
+    "trainName": "Dibrugarh Rajdhani",
+    "stations": [
+      {
+        "name": "Dibrugarh",
+        "coords": {
+          "lat": 27.4728,
+          "lng": 94.912
+        }
+      },
+      {
+        "name": "New Tinsukia",
+        "coords": {
+          "lat": 27.5167,
+          "lng": 94.2311
+        }
+      },
+      {
+        "name": "Mariani",
+        "coords": {
+          "lat": 27.5606,
+          "lng": 93.5502
+        }
+      },
+      {
+        "name": "Dimapur",
+        "coords": {
+          "lat": 27.6045,
+          "lng": 92.8693
+        }
+      },
+      {
+        "name": "Diphu",
+        "coords": {
+          "lat": 27.6484,
+          "lng": 92.1885
+        }
+      },
+      {
+        "name": "Lumding",
+        "coords": {
+          "lat": 27.6922,
+          "lng": 91.5076
+        }
+      },
+      {
+        "name": "Chaparmukh",
+        "coords": {
+          "lat": 27.7361,
+          "lng": 90.8267
+        }
+      },
+      {
+        "name": "Guwahati",
+        "coords": {
+          "lat": 27.78,
+          "lng": 90.1458
+        }
+      },
+      {
+        "name": "New Bongaigaon",
+        "coords": {
+          "lat": 27.8239,
+          "lng": 89.4649
+        }
+      },
+      {
+        "name": "Kokrajhar",
+        "coords": {
+          "lat": 27.8678,
+          "lng": 88.784
+        }
+      },
+      {
+        "name": "New Alipurduar",
+        "coords": {
+          "lat": 27.9117,
+          "lng": 88.1032
+        }
+      },
+      {
+        "name": "New Cooch Behar",
+        "coords": {
+          "lat": 27.9556,
+          "lng": 87.4223
+        }
+      },
+      {
+        "name": "New Jalpaiguri",
+        "coords": {
+          "lat": 27.9995,
+          "lng": 86.7414
+        }
+      },
+      {
+        "name": "Kishanganj",
+        "coords": {
+          "lat": 28.0434,
+          "lng": 86.0605
+        }
+      },
+      {
+        "name": "Katihar",
+        "coords": {
+          "lat": 28.0872,
+          "lng": 85.3796
+        }
+      },
+      {
+        "name": "Naugachia",
+        "coords": {
+          "lat": 28.1311,
+          "lng": 84.6987
+        }
+      },
+      {
+        "name": "Barauni",
+        "coords": {
+          "lat": 28.175,
+          "lng": 84.0178
+        }
+      },
+      {
+        "name": "Hajipur",
+        "coords": {
+          "lat": 28.2189,
+          "lng": 83.337
+        }
+      },
+      {
+        "name": "Chhapra",
+        "coords": {
+          "lat": 28.2628,
+          "lng": 82.6561
+        }
+      },
+      {
+        "name": "Ballia",
+        "coords": {
+          "lat": 28.3067,
+          "lng": 81.9752
+        }
+      },
+      {
+        "name": "Ghazipur City",
+        "coords": {
+          "lat": 28.3506,
+          "lng": 81.2943
+        }
+      },
+      {
+        "name": "Varanasi",
+        "coords": {
+          "lat": 28.3945,
+          "lng": 80.6134
+        }
+      },
+      {
+        "name": "Pt. DD Upadhyaya",
+        "coords": {
+          "lat": 28.4383,
+          "lng": 79.9325
+        }
+      },
+      {
+        "name": "Prayagraj Jn",
+        "coords": {
+          "lat": 28.4822,
+          "lng": 79.2517
+        }
+      },
+      {
+        "name": "Kanpur Central",
+        "coords": {
+          "lat": 28.5261,
+          "lng": 78.5708
+        }
+      },
+      {
+        "name": "Aligarh Jn",
+        "coords": {
+          "lat": 28.57,
+          "lng": 77.8899
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 28.6139,
+          "lng": 77.209
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 27.5167,
+      "lng": 94.2311,
+      "station": "New Tinsukia"
+    }
+  },
+  {
+    "trainNumber": "12915",
+    "trainName": "Ashram Express",
+    "stations": [
+      {
+        "name": "Ahmedabad",
+        "coords": {
+          "lat": 23.0225,
+          "lng": 72.5714
+        }
+      },
+      {
+        "name": "Sabarmati",
+        "coords": {
+          "lat": 23.3358,
+          "lng": 72.8301
+        }
+      },
+      {
+        "name": "Mahesana",
+        "coords": {
+          "lat": 23.6491,
+          "lng": 73.0888
+        }
+      },
+      {
+        "name": "Unjha",
+        "coords": {
+          "lat": 23.9624,
+          "lng": 73.3475
+        }
+      },
+      {
+        "name": "Palanpur",
+        "coords": {
+          "lat": 24.2756,
+          "lng": 73.6062
+        }
+      },
+      {
+        "name": "Abu Road",
+        "coords": {
+          "lat": 24.5889,
+          "lng": 73.8649
+        }
+      },
+      {
+        "name": "Falna",
+        "coords": {
+          "lat": 24.9022,
+          "lng": 74.1236
+        }
+      },
+      {
+        "name": "Beawar",
+        "coords": {
+          "lat": 25.2155,
+          "lng": 74.3823
+        }
+      },
+      {
+        "name": "Ajmer",
+        "coords": {
+          "lat": 25.5288,
+          "lng": 74.641
+        }
+      },
+      {
+        "name": "Jaipur",
+        "coords": {
+          "lat": 25.8421,
+          "lng": 74.8997
+        }
+      },
+      {
+        "name": "Dausa",
+        "coords": {
+          "lat": 26.1553,
+          "lng": 75.1585
+        }
+      },
+      {
+        "name": "Bandikui",
+        "coords": {
+          "lat": 26.4686,
+          "lng": 75.4172
+        }
+      },
+      {
+        "name": "Alwar",
+        "coords": {
+          "lat": 26.7819,
+          "lng": 75.6759
+        }
+      },
+      {
+        "name": "Khairthal",
+        "coords": {
+          "lat": 27.0952,
+          "lng": 75.9346
+        }
+      },
+      {
+        "name": "Rewari",
+        "coords": {
+          "lat": 27.4085,
+          "lng": 76.1933
+        }
+      },
+      {
+        "name": "Pataudi Road",
+        "coords": {
+          "lat": 27.7218,
+          "lng": 76.452
+        }
+      },
+      {
+        "name": "Gurgaon",
+        "coords": {
+          "lat": 28.035,
+          "lng": 76.7107
+        }
+      },
+      {
+        "name": "Delhi Cantt",
+        "coords": {
+          "lat": 28.3483,
+          "lng": 76.9694
+        }
+      },
+      {
+        "name": "Old Delhi",
+        "coords": {
+          "lat": 28.6616,
+          "lng": 77.2281
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 23.3358,
+      "lng": 72.8301,
+      "station": "Sabarmati"
+    }
+  },
+  {
+    "trainNumber": "12805",
+    "trainName": "Janmabhoomi Express",
+    "stations": [
+      {
+        "name": "Visakhapatnam",
+        "coords": {
+          "lat": 17.6868,
+          "lng": 83.2185
+        }
+      },
+      {
+        "name": "Duvvada",
+        "coords": {
+          "lat": 17.6731,
+          "lng": 82.9563
+        }
+      },
+      {
+        "name": "Anakapalle",
+        "coords": {
+          "lat": 17.6594,
+          "lng": 82.694
+        }
+      },
+      {
+        "name": "Tuni",
+        "coords": {
+          "lat": 17.6457,
+          "lng": 82.4318
+        }
+      },
+      {
+        "name": "Annavaram",
+        "coords": {
+          "lat": 17.6319,
+          "lng": 82.1696
+        }
+      },
+      {
+        "name": "Samalkot",
+        "coords": {
+          "lat": 17.6182,
+          "lng": 81.9073
+        }
+      },
+      {
+        "name": "Rajahmundry",
+        "coords": {
+          "lat": 17.6045,
+          "lng": 81.6451
+        }
+      },
+      {
+        "name": "Tadepalligudem",
+        "coords": {
+          "lat": 17.5908,
+          "lng": 81.3829
+        }
+      },
+      {
+        "name": "Eluru",
+        "coords": {
+          "lat": 17.5771,
+          "lng": 81.1206
+        }
+      },
+      {
+        "name": "Vijayawada",
+        "coords": {
+          "lat": 17.5633,
+          "lng": 80.8584
+        }
+      },
+      {
+        "name": "Tenali",
+        "coords": {
+          "lat": 17.5496,
+          "lng": 80.5962
+        }
+      },
+      {
+        "name": "Guntur",
+        "coords": {
+          "lat": 17.5359,
+          "lng": 80.3339
+        }
+      },
+      {
+        "name": "Sattenapalle",
+        "coords": {
+          "lat": 17.5222,
+          "lng": 80.0717
+        }
+      },
+      {
+        "name": "Piduguralla",
+        "coords": {
+          "lat": 17.5085,
+          "lng": 79.8095
+        }
+      },
+      {
+        "name": "Nadikude",
+        "coords": {
+          "lat": 17.4948,
+          "lng": 79.5472
+        }
+      },
+      {
+        "name": "Miryalaguda",
+        "coords": {
+          "lat": 17.4811,
+          "lng": 79.285
+        }
+      },
+      {
+        "name": "Nalgonda",
+        "coords": {
+          "lat": 17.4673,
+          "lng": 79.0228
+        }
+      },
+      {
+        "name": "Ramannapet",
+        "coords": {
+          "lat": 17.4536,
+          "lng": 78.7605
+        }
+      },
+      {
+        "name": "Secunderabad",
+        "coords": {
+          "lat": 17.4399,
+          "lng": 78.4983
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 17.6731,
+      "lng": 82.9563,
+      "station": "Duvvada"
+    }
+  },
+  {
+    "trainNumber": "12245",
+    "trainName": "Howrah Yesvantpur Duronto",
+    "stations": [
+      {
+        "name": "Howrah",
+        "coords": {
+          "lat": 22.5855,
+          "lng": 88.3426
+        }
+      },
+      {
+        "name": "Bhubaneswar",
+        "coords": {
+          "lat": 21.7167,
+          "lng": 87.3606
+        }
+      },
+      {
+        "name": "Khurda Road",
+        "coords": {
+          "lat": 20.8479,
+          "lng": 86.3787
+        }
+      },
+      {
+        "name": "Vizianagaram",
+        "coords": {
+          "lat": 19.979,
+          "lng": 85.3967
+        }
+      },
+      {
+        "name": "Visakhapatnam",
+        "coords": {
+          "lat": 19.1102,
+          "lng": 84.4147
+        }
+      },
+      {
+        "name": "Vijayawada",
+        "coords": {
+          "lat": 18.2414,
+          "lng": 83.4327
+        }
+      },
+      {
+        "name": "Renigunta",
+        "coords": {
+          "lat": 17.3726,
+          "lng": 82.4508
+        }
+      },
+      {
+        "name": "Tirupati",
+        "coords": {
+          "lat": 16.5038,
+          "lng": 81.4688
+        }
+      },
+      {
+        "name": "Katpadi",
+        "coords": {
+          "lat": 15.635,
+          "lng": 80.4868
+        }
+      },
+      {
+        "name": "Jolarpettai",
+        "coords": {
+          "lat": 14.7661,
+          "lng": 79.5048
+        }
+      },
+      {
+        "name": "Krishnarajapuram",
+        "coords": {
+          "lat": 13.8973,
+          "lng": 78.5229
+        }
+      },
+      {
+        "name": "Yesvantpur",
+        "coords": {
+          "lat": 13.0285,
+          "lng": 77.5409
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 21.7167,
+      "lng": 87.3606,
+      "station": "Bhubaneswar"
+    }
+  },
+  {
+    "trainNumber": "12213",
+    "trainName": "Yesvantpur Delhi Duronto",
+    "stations": [
+      {
+        "name": "Yesvantpur",
+        "coords": {
+          "lat": 13.0285,
+          "lng": 77.5409
+        }
+      },
+      {
+        "name": "Guntakal",
+        "coords": {
+          "lat": 14.4501,
+          "lng": 77.5084
+        }
+      },
+      {
+        "name": "Secunderabad",
+        "coords": {
+          "lat": 15.8717,
+          "lng": 77.476
+        }
+      },
+      {
+        "name": "Balharshah",
+        "coords": {
+          "lat": 17.2932,
+          "lng": 77.4435
+        }
+      },
+      {
+        "name": "Nagpur",
+        "coords": {
+          "lat": 18.7148,
+          "lng": 77.411
+        }
+      },
+      {
+        "name": "Itarsi",
+        "coords": {
+          "lat": 20.1364,
+          "lng": 77.3785
+        }
+      },
+      {
+        "name": "Bhopal",
+        "coords": {
+          "lat": 21.558,
+          "lng": 77.3461
+        }
+      },
+      {
+        "name": "Jhansi",
+        "coords": {
+          "lat": 22.9796,
+          "lng": 77.3136
+        }
+      },
+      {
+        "name": "Gwalior",
+        "coords": {
+          "lat": 24.4012,
+          "lng": 77.2811
+        }
+      },
+      {
+        "name": "Agra Cantt",
+        "coords": {
+          "lat": 25.8227,
+          "lng": 77.2486
+        }
+      },
+      {
+        "name": "New Delhi",
+        "coords": {
+          "lat": 27.2443,
+          "lng": 77.2162
+        }
+      },
+      {
+        "name": "Delhi Sarai Rohilla",
+        "coords": {
+          "lat": 28.6659,
+          "lng": 77.1837
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 14.4501,
+      "lng": 77.5084,
+      "station": "Guntakal"
+    }
+  },
+  {
+    "trainNumber": "22691",
+    "trainName": "Rajdhani Express",
+    "stations": [
+      {
+        "name": "Bangalore",
+        "coords": {
+          "lat": 12.9716,
+          "lng": 77.5946
+        }
+      },
+      {
+        "name": "Sri Sathya Sai Prashanthi Nilayam",
+        "coords": {
+          "lat": 13.9477,
+          "lng": 77.5732
+        }
+      },
+      {
+        "name": "Dharmavaram",
+        "coords": {
+          "lat": 14.9238,
+          "lng": 77.5519
+        }
+      },
+      {
+        "name": "Anantapur",
+        "coords": {
+          "lat": 15.8998,
+          "lng": 77.5305
+        }
+      },
+      {
+        "name": "Guntakal",
+        "coords": {
+          "lat": 16.8759,
+          "lng": 77.5091
+        }
+      },
+      {
+        "name": "Raichur",
+        "coords": {
+          "lat": 17.852,
+          "lng": 77.4877
+        }
+      },
+      {
+        "name": "Sedam",
+        "coords": {
+          "lat": 18.8281,
+          "lng": 77.4664
+        }
+      },
+      {
+        "name": "Secunderabad",
+        "coords": {
+          "lat": 19.8041,
+          "lng": 77.445
+        }
+      },
+      {
+        "name": "Kazipet",
+        "coords": {
+          "lat": 20.7802,
+          "lng": 77.4236
+        }
+      },
+      {
+        "name": "Balharshah",
+        "coords": {
+          "lat": 21.7563,
+          "lng": 77.4022
+        }
+      },
+      {
+        "name": "Nagpur",
+        "coords": {
+          "lat": 22.7324,
+          "lng": 77.3808
+        }
+      },
+      {
+        "name": "Itarsi",
+        "coords": {
+          "lat": 23.7084,
+          "lng": 77.3595
+        }
+      },
+      {
+        "name": "Bhopal",
+        "coords": {
+          "lat": 24.6845,
+          "lng": 77.3381
+        }
+      },
+      {
+        "name": "Jhansi",
+        "coords": {
+          "lat": 25.6606,
+          "lng": 77.3167
+        }
+      },
+      {
+        "name": "Gwalior",
+        "coords": {
+          "lat": 26.6366,
+          "lng": 77.2953
+        }
+      },
+      {
+        "name": "Agra Cantt",
+        "coords": {
+          "lat": 27.6127,
+          "lng": 77.274
+        }
+      },
+      {
+        "name": "Hazrat Nizamuddin",
+        "coords": {
+          "lat": 28.5888,
+          "lng": 77.2526
+        }
+      }
+    ],
+    "currentLocation": {
+      "lat": 13.9477,
+      "lng": 77.5732,
+      "station": "Sri Sathya Sai Prashanthi Nilayam"
+    }
+  }
+]
