@@ -115,14 +115,37 @@ export default function Navbar() {
       }}>
         {/* Brand */}
         <div 
+          id="navbar-brand-logo"
           onClick={() => navigate('/')}
-          style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', cursor: 'pointer' }}
+          style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', cursor: 'pointer' }}
+          title="RailSafe Alert – Smart Destination Alarm System"
         >
-          <span style={{ fontSize: '1.6rem' }}>🚆</span>
+          <div style={{
+            position: 'relative',
+            width: '38px',
+            height: '38px',
+            borderRadius: '10px',
+            background: 'linear-gradient(135deg, rgba(2, 132, 199, 0.18), rgba(15, 118, 110, 0.18))',
+            border: '1px solid rgba(2, 132, 199, 0.35)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            fontSize: '1.35rem',
+            boxShadow: '0 2px 8px rgba(2, 132, 199, 0.15)'
+          }}>
+            <span>🚆</span>
+            <span style={{
+              position: 'absolute',
+              bottom: '-2px',
+              right: '-3px',
+              fontSize: '0.75rem',
+              lineHeight: 1
+            }}>🔔</span>
+          </div>
           <div>
             <span style={{ 
-              fontWeight: '700', 
-              fontSize: '1.2rem', 
+              fontWeight: '800', 
+              fontSize: '1.25rem', 
               color: 'var(--text-primary, #0F172A)',
               letterSpacing: '-0.02em'
             }}>
