@@ -40,7 +40,7 @@ export default function ActiveAlarm() {
   const retryTimeoutRef = useRef(null);
   const retryCountRef = useRef(0);
   const MAX_RETRIES = 3;
-  const [networkError, setNetworkError] = useState(null);
+  const [_networkError, setNetworkError] = useState(null);
   const [userSettings, setUserSettings] = useState(getSettings);
 
   const { train, alarmType, alertValue, destination, liveData } = state || {};
@@ -345,71 +345,66 @@ export default function ActiveAlarm() {
         </div>
       ) : (
         <>
-          {networkError && (
-            <div style={{ backgroundColor: 'rgba(255, 107, 107, 0.15)', padding: '10px', borderRadius: '8px', marginBottom: '15px', border: '1px solid #FF6B6B', color: '#FF6B6B', fontWeight: 'bold' }}>
-              ⚠️ {networkError}
-            </div>
-          )}
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '1.5rem', color: 'var(--success)' }}>
             <div className="live-indicator"></div>
             <h2 style={{ color: 'inherit', margin: 0, fontSize: '1.5rem' }}>Active Alarm Monitoring</h2>
           </div>
 
-          <h3 style={{ color: 'var(--text-light)', fontSize: '1.2rem', marginBottom: '0.5rem' }}>
+          <h3 style={{ color: '#0F172A', fontSize: '1.3rem', fontWeight: '700', marginBottom: '0.5rem' }}>
             {train.trainNumber} - {train.trainName}
           </h3>
-          <p style={{ fontSize: '1rem', color: 'var(--secondary)', fontWeight: 'bold' }}>
+          <p style={{ fontSize: '1rem', color: '#0f766e', fontWeight: '700' }}>
             Target Station: {displayEndStation}
           </p>
 
-          <div style={{ margin: '1rem 0', background: 'rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '15px', border: '1px solid var(--glass-border)' }}>
+          <div style={{ margin: '1rem 0', background: 'rgba(255, 255, 255, 0.85)', padding: '1.5rem', borderRadius: '15px', border: '1px solid rgba(203, 213, 225, 0.7)', boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)' }}>
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Origin</div>
-                <div style={{ fontSize: '1.1rem', color: '#fff', fontWeight: 'bold' }}>{displayStartStation}</div>
+                <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>Origin</div>
+                <div style={{ fontSize: '1.1rem', color: '#0F172A', fontWeight: '700' }}>{displayStartStation}</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Destination</div>
-                <div style={{ fontSize: '1.1rem', color: 'var(--primary)', fontWeight: 'bold' }}>{displayEndStation}</div>
+                <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>Destination</div>
+                <div style={{ fontSize: '1.1rem', color: '#0284c7', fontWeight: '700' }}>{displayEndStation}</div>
               </div>
             </div>
             
             <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '1rem' }}>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Current Position</div>
-                <div style={{ fontSize: '1.1rem', color: '#fff' }}>{currentStationDisplay}</div>
+                <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>Current Position</div>
+                <div style={{ fontSize: '1.1rem', color: '#0F172A', fontWeight: '700' }}>{currentStationDisplay}</div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Next Station</div>
-                <div style={{ fontSize: '1.1rem', color: '#fff' }}>{nextStationDisplay}</div>
+                <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>Next Station</div>
+                <div style={{ fontSize: '1.1rem', color: '#0F172A', fontWeight: '700' }}>{nextStationDisplay}</div>
               </div>
             </div>
 
             <div style={{ display: 'flex', justifyContent: 'space-between' }}>
               <div style={{ textAlign: 'left' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Running Status</div>
-                <div style={{ fontSize: '1.1rem', fontWeight: 'bold', color: displayDelay > 0 ? '#FF6B6B' : 'var(--success)' }}>
+                <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>Running Status</div>
+                <div style={{ fontSize: '1.1rem', fontWeight: '700', color: displayDelay > 0 ? '#dc2626' : '#059669' }}>
                   {displayDelay > 0 ? `Delayed by ${displayDelay}m` : 'Running On Time'}
                 </div>
               </div>
               <div style={{ textAlign: 'right' }}>
-                <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Estimated Arrival</div>
-                <div style={{ fontSize: '1.1rem', color: '#fff', fontWeight: 'bold' }}>{displayETA}</div>
+                <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>Estimated Arrival</div>
+                <div style={{ fontSize: '1.1rem', color: '#0F172A', fontWeight: '700' }}>{displayETA}</div>
               </div>
             </div>
           </div>
 
-          <div style={{ margin: '1.5rem 0', display: 'flex', justifyContent: 'space-around', background: 'rgba(255,255,255,0.05)', padding: '1.5rem', borderRadius: '15px', border: '1px solid var(--glass-border)' }}>
+          <div style={{ margin: '1.5rem 0', display: 'flex', justifyContent: 'space-around', background: 'rgba(255, 255, 255, 0.85)', padding: '1.5rem', borderRadius: '15px', border: '1px solid rgba(203, 213, 225, 0.7)', boxShadow: '0 2px 8px rgba(15, 23, 42, 0.05)' }}>
             <div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>Alert Distance Threshold</div>
-              <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{alertValue} {alarmType === 'distance' ? 'km' : 'mins'}</div>
+              <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>Alert Distance Threshold</div>
+              <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#0F172A' }}>{alertValue} {alarmType === 'distance' ? 'km' : 'mins'}</div>
             </div>
-            <div style={{ width: '1px', background: 'var(--glass-border)' }}></div>
+            <div style={{ width: '1px', background: 'rgba(203, 213, 225, 0.7)' }}></div>
             <div>
-              <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+              <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600', textTransform: 'uppercase' }}>
                 {alarmType === 'distance' ? 'Remaining Distance' : 'Estimated Time'}
               </div>
-              <div style={{ fontSize: '1.8rem', fontWeight: 'bold', color: 'var(--primary)' }}>
+              <div style={{ fontSize: '1.8rem', fontWeight: '700', color: '#0284c7' }}>
                 {currentDist !== null ? `${currentDist} ${alarmType === 'distance' ? 'km' : 'mins'}` : 'Calculating...'}
               </div>
             </div>
@@ -436,11 +431,29 @@ export default function ActiveAlarm() {
           <div style={{ display: 'flex', gap: '0.8rem', marginTop: '1rem' }}>
             <button 
               type="button"
+              className="refresh-live-btn bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium"
               onClick={() => fetchLiveStatus(true)} 
               disabled={isRefreshing}
-              style={{ background: 'var(--primary)', flex: 1, padding: '1rem', fontWeight: 'bold', opacity: isRefreshing ? 0.7 : 1, cursor: isRefreshing ? 'not-allowed' : 'pointer' }}
+              style={{
+                backgroundColor: '#1e293b',
+                color: '#f1f5f9',
+                fontWeight: '500',
+                flex: 1,
+                padding: '1rem',
+                borderRadius: '10px',
+                border: '1px solid #334155',
+                display: 'inline-flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: '8px',
+                cursor: isRefreshing ? 'not-allowed' : 'pointer',
+                opacity: isRefreshing ? 0.75 : 1,
+                transition: 'background-color 0.2s ease, border-color 0.2s ease',
+                boxShadow: '0 2px 6px rgba(0, 0, 0, 0.25)'
+              }}
             >
-              {isRefreshing ? 'Refreshing Status...' : '🔄 Refresh Status'}
+              <span style={{ display: 'inline-block', transform: isRefreshing ? 'rotate(180deg)' : 'none', transition: 'transform 0.4s' }}>🔄</span>
+              {isRefreshing ? 'Refreshing Status...' : 'Refresh Live Status'}
             </button>
             <button 
               type="button"

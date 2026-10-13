@@ -6,7 +6,7 @@
 const SETTINGS_KEY = 'railSafe_userSettings';
 
 export const DEFAULT_SETTINGS = {
-  theme: 'dark',
+  theme: 'light',
   alarmSound: 'digital', // 'digital' | 'siren' | 'gentle'
   vibrationIntensity: 3, // 1: Low, 2: Med, 3: High
   defaultAlertDistance: 10, // km

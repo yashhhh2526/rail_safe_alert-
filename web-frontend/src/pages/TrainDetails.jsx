@@ -6,6 +6,7 @@ import { fetchLiveTrainData } from '../services/liveTrackingService';
 import { formatTimeWithContext } from '../utils/timeUtils';
 import { getSettings } from '../utils/settingsService';
 import { createJourney } from '../utils/journeyService';
+import AlternateOptionsCard from '../components/AlternateOptionsCard';
 
 export default function TrainDetails() {
   const { state } = useLocation();
@@ -254,7 +255,7 @@ export default function TrainDetails() {
     <div className="glass-panel" style={{ flex: 1 }}>
       <div className="details-header">
         <button className="back-btn" onClick={() => navigate('/')}>←</button>
-        <h2 style={{ fontSize: '1.8rem', color: '#fff' }}>{train.trainNumber} - {train.trainName}</h2>
+        <h2 style={{ fontSize: '1.8rem', color: '#0F172A', fontWeight: '700', letterSpacing: '-0.02em' }}>{train.trainNumber} - {train.trainName}</h2>
       </div>
 
       <div className="info-grid">
@@ -274,52 +275,58 @@ export default function TrainDetails() {
         </div>
         <div className="info-item">
           <div className="label">Distance To Destination</div>
-          <div className="value" style={{ color: '#50E3C2' }}>
+          <div className="value" style={{ color: '#0f766e', fontWeight: '700' }}>
             {displayStations.length > 0 ? `${formattedDistanceRemaining} km remaining${isApproximateDistance ? ' (approx.)' : ''}` : 'Unavailable'}
           </div>
         </div>
       </div>
       
-      {!isLoading && liveError && (
-        <div style={{ 
-          color: '#ffb74d', 
-          backgroundColor: 'rgba(255, 183, 77, 0.1)', 
-          padding: '0.75rem 1rem', 
-          borderRadius: '8px', 
-          marginBottom: '1rem', 
-          fontSize: '0.88rem', 
-          border: '1px solid rgba(255, 183, 77, 0.3)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: '8px'
-        }}>
-          <span>⚠️</span>
-          <span>Could not fetch live tracking ({liveError}). Displaying verified scheduled route data and kilometrage.</span>
-        </div>
-      )}
-      
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', flexWrap: 'wrap', gap: '8px' }}>
         <button 
-          className="refresh-live-btn"
+          className="refresh-live-btn bg-slate-800 hover:bg-slate-700 text-slate-100 font-medium"
           onClick={() => fetchLiveData(true)}
           disabled={isLoading || isRefreshing}
           title="Refresh complete live route data including all halting and non-halting locations"
+          style={{
+            backgroundColor: '#1e293b',
+            color: '#f1f5f9',
+            fontWeight: '500',
+            padding: '0.6rem 1.1rem',
+            borderRadius: '10px',
+            border: '1px solid #334155',
+            display: 'inline-flex',
+            alignItems: 'center',
+            gap: '8px',
+            cursor: (isLoading || isRefreshing) ? 'not-allowed' : 'pointer',
+            opacity: (isLoading || isRefreshing) ? 0.75 : 1,
+            transition: 'background-color 0.2s ease, border-color 0.2s ease',
+            boxShadow: '0 2px 6px rgba(0, 0, 0, 0.25)'
+          }}
         >
           <span style={{ display: 'inline-block', transform: isRefreshing ? 'rotate(180deg)' : 'none', transition: 'transform 0.4s' }}>🔄</span>
           {isRefreshing ? 'Refreshing Status...' : 'Refresh Live Status'}
         </button>
 
-        {(!isLoading || isRefreshing) && !liveError && (
-          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#aaa', fontSize: '0.85rem' }}>
+        {(!isLoading || isRefreshing) && (
+          <div style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#475569', fontSize: '0.85rem', fontWeight: '500' }}>
             <div className={`live-indicator ${isRefreshing ? 'pulse-subtle' : ''}`}></div>
             <span>LIVE • {isRefreshing ? 'Updating...' : (lastUpdated !== 'N/A' ? `Last updated ${lastUpdated}` : 'Real-time')}</span>
           </div>
         )}
       </div>
 
+      {/* Alternate Travel Options Component (Triggers banner when delay >= 45m) */}
+      <AlternateOptionsCard
+        fromStation={train.userSelectedFrom || train.fromStation || displayStations[0]?.name || 'Origin'}
+        toStation={selectedDestination?.name || selectedDestination?.code || 'Destination'}
+        distanceKm={formattedDistanceRemaining || targetCumulative}
+        delayMinutes={displayDelay}
+        currentTrainNumber={train.trainNumber}
+      />
+
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.8rem' }}>
-        <h3 style={{ margin: 0, color: '#fff' }}>Route Timeline</h3>
-        <span style={{ fontSize: '0.8rem', color: '#888' }}>
+        <h3 style={{ margin: 0, color: '#0F172A', fontWeight: '700', fontSize: '1.3rem' }}>Route Timeline</h3>
+        <span style={{ fontSize: '0.82rem', color: '#475569', fontWeight: '500' }}>
           {displayStations.length} locations ({displayStations.filter(s => s.isHalt !== false && s.locationType !== 'non-halting').length} halts)
         </span>
       </div>
@@ -402,7 +409,7 @@ export default function TrainDetails() {
                         {displayName}
                       </div>
                       {!isNonHalt && station.expectedPlatform && (
-                        <div style={{ fontSize: '0.72rem', color: '#888', marginTop: '2px' }}>
+                        <div style={{ fontSize: '0.72rem', color: '#475569', fontWeight: '500', marginTop: '2px' }}>
                           Platform: {station.expectedPlatform}
                         </div>
                       )}
@@ -415,36 +422,37 @@ export default function TrainDetails() {
                         </span>
                         <div className="status-badge" style={{ 
                           fontSize: '0.65rem', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold',
-                          backgroundColor: station.status === 'CURRENT' ? '#2196F3' : station.status === 'DESTINATION' ? '#4A90E2' : 'rgba(255,255,255,0.08)',
-                          color: station.status === 'CURRENT' || station.status === 'DESTINATION' ? '#fff' : '#888'
+                          backgroundColor: station.status === 'CURRENT' ? '#0284c7' : station.status === 'DESTINATION' ? '#0369a1' : 'rgba(100, 116, 139, 0.12)',
+                          color: station.status === 'CURRENT' || station.status === 'DESTINATION' ? '#ffffff' : '#475569',
+                          border: station.status === 'CURRENT' || station.status === 'DESTINATION' ? 'none' : '1px solid rgba(100, 116, 139, 0.25)'
                         }}>
                           {station.status || (isCurrent ? 'CURRENT' : '')}
                         </div>
                       </div>
-                      <div style={{ fontSize: '0.78rem', color: '#50E3C2', fontWeight: '600' }}>
+                      <div style={{ fontSize: '0.78rem', color: '#0f766e', fontWeight: '700' }}>
                         {fmtOrigin} km
                       </div>
                     </div>
                   </div>
 
                   {/* Real Railway Distance Details */}
-                  <div className="station-distances" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', fontSize: '0.72rem', color: '#a0aec0', marginTop: '4px', marginBottom: '4px', alignItems: 'center' }}>
+                  <div className="station-distances" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', fontSize: '0.72rem', color: '#475569', fontWeight: '500', marginTop: '4px', marginBottom: '4px', alignItems: 'center' }}>
                     <span>📍 {fmtPrev} km from previous</span>
                     <span>•</span>
                     <span>🚩 {fmtOrigin} km from origin</span>
                     <span>•</span>
-                    <span style={{ color: '#50E3C2', fontWeight: '500' }}>🏁 {fmtRem} km to destination</span>
+                    <span style={{ color: '#0f766e', fontWeight: '700' }}>🏁 {fmtRem} km to destination</span>
                   </div>
 
                   {/* Timing Information */}
                   {isNonHalt ? (
                     (station.scheduledArrival || station.actualArrival || station.expectedArrival) && (
-                      <div className="time-row non-halt-time" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px', backgroundColor: 'rgba(255, 255, 255, 0.04)', padding: '5px 8px', borderRadius: '6px', fontSize: '0.75rem' }}>
+                      <div className="time-row non-halt-time" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px', backgroundColor: 'rgba(241, 245, 249, 0.85)', border: '1px solid rgba(203, 213, 225, 0.7)', padding: '5px 8px', borderRadius: '6px', fontSize: '0.75rem' }}>
                         <div className="time-block">
-                          <div style={{ fontSize: '0.65rem', color: '#888' }}>
+                          <div style={{ fontSize: '0.65rem', color: '#475569', fontWeight: '600' }}>
                             {station.status === 'PASSED' ? 'Passed At' : 'Expected Passage'}
                           </div>
-                          <div style={{ fontSize: '0.8rem', fontWeight: '500', color: '#ddd' }}>
+                          <div style={{ fontSize: '0.8rem', fontWeight: '600', color: '#0F172A' }}>
                             {formatTime(
                               station.status === 'PASSED'
                                 ? (station.actualArrival || station.actualDeparture || station.expectedArrival || station.scheduledArrival)
@@ -454,8 +462,8 @@ export default function TrainDetails() {
                         </div>
                         {station.delayMinutes !== undefined && station.delayMinutes !== null && (
                           <div className="time-block" style={{ textAlign: 'right' }}>
-                            <div style={{ fontSize: '0.65rem', color: '#888' }}>Delay</div>
-                            <div style={{ fontSize: '0.8rem', fontWeight: '500', color: station.delayMinutes > 0 ? '#FF6B6B' : 'var(--success)' }}>
+                            <div style={{ fontSize: '0.65rem', color: '#475569', fontWeight: '600' }}>Delay</div>
+                            <div style={{ fontSize: '0.8rem', fontWeight: '700', color: station.delayMinutes > 0 ? '#dc2626' : '#059669' }}>
                               {station.delayMinutes > 0 ? `+${station.delayMinutes} min` : 'On time'}
                             </div>
                           </div>
@@ -464,18 +472,18 @@ export default function TrainDetails() {
                     )
                   ) : (
                     (station.scheduledArrival || station.scheduledDeparture) && (
-                      <div className="time-row" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px', backgroundColor: 'rgba(255, 255, 255, 0.05)', padding: '6px 8px', borderRadius: '6px' }}>
+                      <div className="time-row" style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px', backgroundColor: 'rgba(241, 245, 249, 0.85)', border: '1px solid rgba(203, 213, 225, 0.7)', padding: '6px 8px', borderRadius: '6px' }}>
                         <div className="time-block">
-                          <div style={{ fontSize: '0.65rem', color: '#888' }}>Scheduled</div>
-                          <div style={{ fontSize: '0.8rem', fontWeight: '500', color: '#fff' }}>
+                          <div style={{ fontSize: '0.65rem', color: '#475569', fontWeight: '600' }}>Scheduled</div>
+                          <div style={{ fontSize: '0.8rem', fontWeight: '600', color: '#0F172A' }}>
                             {formatTime(station.scheduledArrival || station.scheduledDeparture)}
                           </div>
                         </div>
                         <div className="time-block">
-                          <div style={{ fontSize: '0.65rem', color: '#888' }}>
+                          <div style={{ fontSize: '0.65rem', color: '#475569', fontWeight: '600' }}>
                             {station.status === 'PASSED' ? 'Actual' : 'Expected'}
                           </div>
-                          <div style={{ fontSize: '0.8rem', fontWeight: '500', color: '#fff' }}>
+                          <div style={{ fontSize: '0.8rem', fontWeight: '600', color: '#0F172A' }}>
                             {formatTime(
                               station.status === 'PASSED'
                                 ? (station.actualArrival || station.actualDeparture || station.expectedArrival || station.scheduledArrival)
@@ -484,8 +492,8 @@ export default function TrainDetails() {
                           </div>
                         </div>
                         <div className="time-block">
-                          <div style={{ fontSize: '0.65rem', color: '#888' }}>Delay</div>
-                          <div style={{ fontSize: '0.8rem', fontWeight: '500', color: station.delayMinutes > 0 ? '#FF6B6B' : 'var(--success)' }}>
+                          <div style={{ fontSize: '0.65rem', color: '#475569', fontWeight: '600' }}>Delay</div>
+                          <div style={{ fontSize: '0.8rem', fontWeight: '700', color: station.delayMinutes > 0 ? '#dc2626' : '#059669' }}>
                             {station.delayMinutes > 0 ? `+${station.delayMinutes} min` : 'On time'}
                           </div>
                         </div>
@@ -499,7 +507,7 @@ export default function TrainDetails() {
         )}
       </div>
 
-      <h3 style={{ marginBottom: '1rem', color: '#fff' }}>Alert me based on:</h3>
+      <h3 style={{ marginBottom: '1rem', color: '#0F172A', fontWeight: '700' }}>Alert me based on:</h3>
       
       <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
         <button className={`distance-btn ${alarmType === 'distance' ? 'active' : ''}`} onClick={() => setAlarmType('distance')}>Distance</button>

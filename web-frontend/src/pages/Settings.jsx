@@ -67,20 +67,20 @@ export default function Settings() {
           >
             ← Back
           </button>
-          <h2 style={{ margin: 0, fontSize: '1.6rem' }}>Settings & Preferences</h2>
+          <h2 style={{ margin: 0, fontSize: '1.6rem', color: '#0F172A', fontWeight: '700' }}>Settings & Preferences</h2>
           <div style={{ width: '60px' }}></div>
         </div>
 
         {savedSuccess && (
           <div style={{
-            background: 'rgba(32, 201, 151, 0.2)',
-            border: '1px solid var(--success)',
-            color: 'var(--success)',
+            background: 'rgba(5, 150, 105, 0.15)',
+            border: '1px solid #059669',
+            color: '#047857',
             padding: '0.75rem 1rem',
             borderRadius: '10px',
             marginBottom: '1.5rem',
             textAlign: 'center',
-            fontWeight: '600'
+            fontWeight: '700'
           }}>
             ✓ Settings saved successfully! Returning to home...
           </div>
@@ -88,7 +88,7 @@ export default function Settings() {
 
         {/* Theme Settings */}
         <div className="info-item" style={{ marginBottom: '1.8rem' }}>
-          <label htmlFor="theme-select" className="label" style={{ fontWeight: '600', color: 'var(--text-light)', display: 'block', marginBottom: '0.4rem' }}>
+          <label htmlFor="theme-select" className="label" style={{ fontWeight: '700', color: '#0F172A', display: 'block', marginBottom: '0.4rem' }}>
             Visual Theme
           </label>
           <select 
@@ -96,40 +96,41 @@ export default function Settings() {
             value={settings.theme}
             onChange={(e) => handleChange('theme', e.target.value)}
             style={{ 
-              background: 'rgba(255, 255, 255, 0.08)', 
-              color: 'var(--text-light)', 
-              border: '1px solid var(--glass-border)', 
+              background: '#ffffff', 
+              color: '#0F172A', 
+              border: '1px solid #cbd5e1', 
               padding: '0.75rem 1rem', 
               borderRadius: '8px',
               width: '100%',
               fontSize: '1rem',
+              fontWeight: '500',
               outline: 'none'
             }}
           >
-            <option value="dark" style={{ background: '#1a2634', color: '#fff' }}>Dark Glassmorphism (Default)</option>
-            <option value="midnight" style={{ background: '#0a0e17', color: '#fff' }}>Midnight Deep Blue</option>
-            <option value="light" style={{ background: '#f0f4f8', color: '#111' }}>Light Contrast</option>
+            <option value="light" style={{ background: '#ffffff', color: '#0F172A' }}>Light Dashboard (High Contrast)</option>
+            <option value="dark" style={{ background: '#ffffff', color: '#0F172A' }}>Dark Glassmorphism</option>
+            <option value="midnight" style={{ background: '#ffffff', color: '#0F172A' }}>Midnight Deep Blue</option>
           </select>
         </div>
 
         {/* Alarm Sound Settings */}
         <div className="info-item" style={{ marginBottom: '1.8rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
-            <label htmlFor="sound-select" className="label" style={{ fontWeight: '600', color: 'var(--text-light)' }}>
+            <label htmlFor="sound-select" className="label" style={{ fontWeight: '700', color: '#0F172A' }}>
               Alarm Sound Profile (Offline Ready)
             </label>
             <button
               type="button"
               onClick={handleTestSound}
               style={{
-                background: isPlayingPreview ? 'var(--danger)' : 'rgba(80, 227, 194, 0.2)',
-                color: isPlayingPreview ? '#fff' : 'var(--secondary)',
-                border: '1px solid var(--secondary)',
+                background: isPlayingPreview ? '#dc2626' : 'rgba(2, 132, 199, 0.15)',
+                color: isPlayingPreview ? '#fff' : '#0284c7',
+                border: '1px solid #0284c7',
                 borderRadius: '6px',
-                padding: '0.3rem 0.8rem',
+                padding: '0.35rem 0.85rem',
                 fontSize: '0.85rem',
                 cursor: 'pointer',
-                fontWeight: '600'
+                fontWeight: '700'
               }}
             >
               {isPlayingPreview ? '⏹ Stop Sound' : '▶ Preview Sound'}
@@ -140,39 +141,41 @@ export default function Settings() {
             value={settings.alarmSound}
             onChange={(e) => handleChange('alarmSound', e.target.value)}
             style={{ 
-              background: 'rgba(255, 255, 255, 0.08)', 
-              color: 'var(--text-light)', 
-              border: '1px solid var(--glass-border)', 
+              background: '#ffffff', 
+              color: '#0F172A', 
+              border: '1px solid #cbd5e1', 
               padding: '0.75rem 1rem', 
               borderRadius: '8px',
               width: '100%',
               fontSize: '1rem',
+              fontWeight: '500',
               outline: 'none'
             }}
           >
-            <option value="digital" style={{ background: '#1a2634', color: '#fff' }}>Digital Alarm Watch (Loud Beeps)</option>
-            <option value="siren" style={{ background: '#1a2634', color: '#fff' }}>Two-Tone Warning Siren</option>
-            <option value="gentle" style={{ background: '#1a2634', color: '#fff' }}>Gentle Harmonic Chime</option>
+            <option value="digital">Digital Alarm Watch (Loud Beeps)</option>
+            <option value="siren">Two-Tone Warning Siren</option>
+            <option value="gentle">Gentle Harmonic Chime</option>
           </select>
         </div>
 
         {/* Vibration Settings */}
         <div className="info-item" style={{ marginBottom: '1.8rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.4rem' }}>
-            <label htmlFor="vibration-slider" className="label" style={{ fontWeight: '600', color: 'var(--text-light)' }}>
+            <label htmlFor="vibration-slider" className="label" style={{ fontWeight: '700', color: '#0F172A' }}>
               Vibration Intensity: Level {settings.vibrationIntensity}
             </label>
             <button
               type="button"
               onClick={handleTestVibration}
               style={{
-                background: 'rgba(255, 255, 255, 0.1)',
-                color: 'var(--text-light)',
-                border: '1px solid var(--glass-border)',
+                background: '#ffffff',
+                color: '#0F172A',
+                border: '1px solid #cbd5e1',
                 borderRadius: '6px',
-                padding: '0.3rem 0.8rem',
+                padding: '0.35rem 0.85rem',
                 fontSize: '0.85rem',
-                cursor: 'pointer'
+                cursor: 'pointer',
+                fontWeight: '600'
               }}
             >
               📳 Test Vibration
@@ -187,7 +190,7 @@ export default function Settings() {
             onChange={(e) => handleChange('vibrationIntensity', parseInt(e.target.value, 10))}
             style={{ width: '100%', margin: '0.8rem 0' }} 
           />
-          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: 'var(--text-muted)' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.8rem', color: '#475569', fontWeight: '500' }}>
             <span>1 - Subtle (Short buzz)</span>
             <span>2 - Moderate (Double pulse)</span>
             <span>3 - Strong (Emergency pattern)</span>
@@ -196,7 +199,7 @@ export default function Settings() {
 
         {/* Default Alert Proximity */}
         <div className="info-item" style={{ marginBottom: '1.8rem' }}>
-          <label htmlFor="distance-select" className="label" style={{ fontWeight: '600', color: 'var(--text-light)', display: 'block', marginBottom: '0.4rem' }}>
+          <label htmlFor="distance-select" className="label" style={{ fontWeight: '700', color: '#0F172A', display: 'block', marginBottom: '0.4rem' }}>
             Default Alert Distance (km before destination)
           </label>
           <select 
@@ -204,26 +207,27 @@ export default function Settings() {
             value={settings.defaultAlertDistance}
             onChange={(e) => handleChange('defaultAlertDistance', parseInt(e.target.value, 10))}
             style={{ 
-              background: 'rgba(255, 255, 255, 0.08)', 
-              color: 'var(--text-light)', 
-              border: '1px solid var(--glass-border)', 
+              background: '#ffffff', 
+              color: '#0F172A', 
+              border: '1px solid #cbd5e1', 
               padding: '0.75rem 1rem', 
               borderRadius: '8px',
               width: '100%',
               fontSize: '1rem',
+              fontWeight: '500',
               outline: 'none'
             }}
           >
-            <option value="2" style={{ background: '#1a2634', color: '#fff' }}>2 km (Immediate Arrival)</option>
-            <option value="5" style={{ background: '#1a2634', color: '#fff' }}>5 km (Standard Wake-up)</option>
-            <option value="10" style={{ background: '#1a2634', color: '#fff' }}>10 km (Recommended for Overnight Trains)</option>
-            <option value="15" style={{ background: '#1a2634', color: '#fff' }}>15 km (Early Preparation)</option>
+            <option value="2">2 km (Immediate Arrival)</option>
+            <option value="5">5 km (Standard Wake-up)</option>
+            <option value="10">10 km (Recommended for Overnight Trains)</option>
+            <option value="15">15 km (Early Preparation)</option>
           </select>
         </div>
 
         {/* Emergency Helpline */}
         <div className="info-item" style={{ marginBottom: '2.5rem' }}>
-          <label htmlFor="emergency-input" className="label" style={{ fontWeight: '600', color: 'var(--text-light)', display: 'block', marginBottom: '0.4rem' }}>
+          <label htmlFor="emergency-input" className="label" style={{ fontWeight: '700', color: '#0F172A', display: 'block', marginBottom: '0.4rem' }}>
             Railway Emergency Assistance Hotline
           </label>
           <input 
@@ -233,17 +237,18 @@ export default function Settings() {
             onChange={(e) => handleChange('emergencyNumber', e.target.value)}
             placeholder="139"
             style={{ 
-              background: 'rgba(255, 255, 255, 0.08)', 
-              color: 'var(--text-light)', 
-              border: '1px solid var(--glass-border)', 
+              background: '#ffffff', 
+              color: '#0F172A', 
+              border: '1px solid #cbd5e1', 
               padding: '0.75rem 1rem', 
               borderRadius: '8px',
               width: '100%',
               fontSize: '1rem',
+              fontWeight: '500',
               outline: 'none'
             }}
           />
-          <small style={{ color: 'var(--text-muted)', display: 'block', marginTop: '0.3rem' }}>
+          <small style={{ color: '#475569', display: 'block', marginTop: '0.3rem', fontWeight: '500' }}>
             Official Indian Railways Security, Medical & Complaint Helpline (Default: 139)
           </small>
         </div>

@@ -185,25 +185,25 @@ export default function Home() {
                   <div className="train-route">
                     Route: {train.stations[0].name} → {train.stations[train.stations.length - 1].name}
                   </div>
-                  <div className="train-platform" style={{ marginTop: '0.5rem', color: 'var(--secondary)', fontSize: '0.9rem', fontWeight: '500' }}>
+                  <div className="train-platform" style={{ marginTop: '0.5rem', color: '#0f766e', fontSize: '0.9rem', fontWeight: '600' }}>
                     Expected Platform: {train.expectedPlatform || 'TBD'}
                   </div>
                 </div>
               ))
             ) : searchError ? (
-              <p className="empty-state" style={{ color: '#ff6b6b' }}>{searchError}</p>
+              <p className="empty-state" style={{ color: '#dc2626', fontWeight: '600' }}>{searchError}</p>
             ) : searched ? (
               <p className="empty-state">No trains found matching '{searchQuery}'</p>
             ) : (
               recentJourneys.length > 0 && (
                 <div style={{ marginTop: '1rem', animation: 'fadeIn 0.5s ease' }}>
-                  <h3 style={{ color: 'var(--text-muted)', fontSize: '1rem', marginBottom: '1rem' }}>⭐ Quick Demo Trains & Recent Searches</h3>
+                  <h3 style={{ color: '#334155', fontSize: '1rem', fontWeight: '700', marginBottom: '1rem' }}>⭐ Quick Demo Trains & Recent Searches</h3>
                   <div className="recent-journeys">
                     {recentJourneys.map((rj, idx) => (
                       <div key={rj.trainNumber || `recent-${idx}`} className="recent-card glass-panel" onClick={() => handleRecentClick(rj.trainNumber)}>
-                        <div style={{ fontWeight: 'bold', color: 'var(--secondary)', marginBottom: '0.3rem' }}>🚆 {rj.trainNumber}</div>
-                        <div style={{ fontSize: '0.85rem', color: 'var(--text-light)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{rj.trainName}</div>
-                        <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>{rj.route}</div>
+                        <div style={{ fontWeight: 'bold', color: '#0284c7', marginBottom: '0.3rem' }}>🚆 {rj.trainNumber}</div>
+                        <div style={{ fontSize: '0.85rem', color: '#0F172A', fontWeight: '600', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{rj.trainName}</div>
+                        <div style={{ fontSize: '0.75rem', color: '#475569', fontWeight: '500' }}>{rj.route}</div>
                       </div>
                     ))}
                   </div>

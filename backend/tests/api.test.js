@@ -78,3 +78,23 @@ test('API 404 handler returns structured JSON for unknown routes', async () => {
   const data = await res.json();
   assert.equal(data.success, false);
 });
+
+test('API Alternative Travel Options returns multi-modal alternatives for route', async () => {
+  const res = await fetch(`${baseUrl}/api/trains/alternatives?from=New+Delhi&to=Varanasi&distance=750`);
+  assert.equal(res.status, 200);
+  const json = await res.json();
+  assert.equal(json.success, true);
+  assert.ok(json.data);
+  assert.ok(Array.isArray(json.data.options));
+  assert.ok(json.data.options.length >= 3);
+  assert.ok(json.data.options.some(o => o.category === 'Interstate Bus'));
+  assert.ok(json.data.options.some(o => o.category === 'Intercity Cab'));
+});
+
+test('API Alternative Travel Options rejects missing from or to query parameters', async () => {
+  const res = await fetch(`${baseUrl}/api/trains/alternatives`);
+  assert.equal(res.status, 400);
+  const json = await res.json();
+  assert.equal(json.success, false);
+});
+

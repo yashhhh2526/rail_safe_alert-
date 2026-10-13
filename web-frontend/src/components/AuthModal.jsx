@@ -63,7 +63,10 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
         width: '100%',
         maxWidth: '440px',
         position: 'relative',
-        boxShadow: '0 20px 50px rgba(0, 0, 0, 0.6)'
+        background: '#ffffff',
+        color: '#0F172A',
+        border: '1px solid #cbd5e1',
+        boxShadow: '0 20px 50px rgba(15, 23, 42, 0.25)'
       }}>
         {/* Close Button */}
         <button
@@ -75,7 +78,7 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
             right: '1.2rem',
             background: 'transparent',
             border: 'none',
-            color: 'var(--text-muted)',
+            color: '#475569',
             fontSize: '1.5rem',
             cursor: 'pointer',
             lineHeight: 1
@@ -88,20 +91,22 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
           <div>
             <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
               <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>👤</div>
-              <h2 style={{ fontSize: '1.5rem', marginBottom: '0.2rem' }}>{currentUser.name}</h2>
-              <p style={{ color: 'var(--text-muted)', fontSize: '0.9rem' }}>{currentUser.email}</p>
+              <h2 style={{ fontSize: '1.5rem', marginBottom: '0.2rem', color: '#0F172A', fontWeight: '700' }}>{currentUser.name}</h2>
+              <p style={{ color: '#475569', fontSize: '0.9rem', fontWeight: '500' }}>{currentUser.email}</p>
               {currentUser.phone && (
-                <p style={{ color: 'var(--secondary)', fontSize: '0.85rem' }}>📞 {currentUser.phone}</p>
+                <p style={{ color: '#0f766e', fontSize: '0.85rem', fontWeight: '600' }}>📞 {currentUser.phone}</p>
               )}
             </div>
 
             <div style={{
-              background: 'rgba(255, 255, 255, 0.05)',
+              background: '#f8fafc',
+              border: '1px solid #cbd5e1',
               padding: '1rem',
               borderRadius: '10px',
               marginBottom: '1.5rem',
               fontSize: '0.9rem',
-              color: 'var(--text-light)'
+              color: '#475569',
+              fontWeight: '500'
             }}>
               ✓ Connected to RailSafe Cloud Account.<br />
               Your alarms, alert preferences, and journeys automatically sync across devices.
@@ -112,7 +117,7 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
               onClick={handleLogout}
               style={{
                 width: '100%',
-                background: 'var(--danger)',
+                background: '#dc2626',
                 color: '#fff',
                 padding: '0.8rem',
                 borderRadius: '8px',
@@ -129,7 +134,8 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
             {/* Tab switchers */}
             <div style={{
               display: 'flex',
-              background: 'rgba(255, 255, 255, 0.08)',
+              background: '#f1f5f9',
+              border: '1px solid #cbd5e1',
               borderRadius: '8px',
               padding: '4px',
               marginBottom: '1.5rem'
@@ -139,8 +145,8 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
                 onClick={() => { setTab('login'); setError(null); }}
                 style={{
                   flex: 1,
-                  background: tab === 'login' ? 'var(--primary)' : 'transparent',
-                  color: tab === 'login' ? '#fff' : 'var(--text-muted)',
+                  background: tab === 'login' ? '#0284c7' : 'transparent',
+                  color: tab === 'login' ? '#fff' : '#475569',
                   border: 'none',
                   padding: '0.6rem',
                   borderRadius: '6px',
@@ -155,8 +161,8 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
                 onClick={() => { setTab('register'); setError(null); }}
                 style={{
                   flex: 1,
-                  background: tab === 'register' ? 'var(--primary)' : 'transparent',
-                  color: tab === 'register' ? '#fff' : 'var(--text-muted)',
+                  background: tab === 'register' ? '#0284c7' : 'transparent',
+                  color: tab === 'register' ? '#fff' : '#475569',
                   border: 'none',
                   padding: '0.6rem',
                   borderRadius: '6px',
@@ -168,21 +174,22 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
               </button>
             </div>
 
-            <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', textAlign: 'center' }}>
+            <h3 style={{ fontSize: '1.3rem', marginBottom: '0.5rem', textAlign: 'center', color: '#0F172A', fontWeight: '700' }}>
               {tab === 'login' ? 'Welcome Back' : 'Join RailSafe Alert'}
             </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.85rem', marginBottom: '1.5rem', textAlign: 'center' }}>
+            <p style={{ color: '#475569', fontSize: '0.85rem', marginBottom: '1.5rem', textAlign: 'center', fontWeight: '500' }}>
               {tab === 'login' ? 'Log in to access your saved journeys and alarm history' : 'Save your railway destinations and receive cloud alerts'}
             </p>
 
             {error && (
               <div style={{
-                background: 'rgba(255, 107, 107, 0.2)',
-                border: '1px solid var(--danger)',
-                color: '#ff9b9b',
+                background: 'rgba(220, 38, 38, 0.1)',
+                border: '1px solid rgba(220, 38, 38, 0.3)',
+                color: '#dc2626',
                 padding: '0.75rem',
                 borderRadius: '8px',
                 fontSize: '0.85rem',
+                fontWeight: '600',
                 marginBottom: '1rem'
               }}>
                 {error}
@@ -192,7 +199,7 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
             <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
               {tab === 'register' && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#475569', fontWeight: '600', marginBottom: '0.3rem' }}>
                     Full Name
                   </label>
                   <input
@@ -202,13 +209,13 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
                     placeholder="e.g. Yashwanth Chodipalli"
                     value={formData.name}
                     onChange={handleChange}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px' }}
+                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px', background: '#ffffff', color: '#0F172A', border: '1px solid #cbd5e1' }}
                   />
                 </div>
               )}
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: '#475569', fontWeight: '600', marginBottom: '0.3rem' }}>
                   Email Address
                 </label>
                 <input
@@ -218,12 +225,12 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
                   placeholder="name@example.com"
                   value={formData.email}
                   onChange={handleChange}
-                  style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px' }}
+                  style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px', background: '#ffffff', color: '#0F172A', border: '1px solid #cbd5e1' }}
                 />
               </div>
 
               <div>
-                <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                <label style={{ display: 'block', fontSize: '0.8rem', color: '#475569', fontWeight: '600', marginBottom: '0.3rem' }}>
                   Password (min 6 characters)
                 </label>
                 <input
@@ -234,13 +241,13 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
                   placeholder="••••••••"
                   value={formData.password}
                   onChange={handleChange}
-                  style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px' }}
+                  style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px', background: '#ffffff', color: '#0F172A', border: '1px solid #cbd5e1' }}
                 />
               </div>
 
               {tab === 'register' && (
                 <div>
-                  <label style={{ display: 'block', fontSize: '0.8rem', color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                  <label style={{ display: 'block', fontSize: '0.8rem', color: '#475569', fontWeight: '600', marginBottom: '0.3rem' }}>
                     Mobile Number (Optional)
                   </label>
                   <input
@@ -249,7 +256,7 @@ export default function AuthModal({ isOpen, onClose, currentUser, onAuthSuccess 
                     placeholder="e.g. 9876543210"
                     value={formData.phone}
                     onChange={handleChange}
-                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px' }}
+                    style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '8px', background: '#ffffff', color: '#0F172A', border: '1px solid #cbd5e1' }}
                   />
                 </div>
               )}

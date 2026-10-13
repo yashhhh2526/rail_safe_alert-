@@ -45,13 +45,14 @@ export default function Journeys() {
           >
             ← Back
           </button>
-          <h2 style={{ margin: 0, fontSize: '1.6rem' }}>My Journeys</h2>
+          <h2 style={{ margin: 0, fontSize: '1.6rem', color: '#0F172A', fontWeight: '700' }}>My Journeys</h2>
           <div style={{ width: '60px' }}></div>
         </div>
 
         {currentUser && (
           <div style={{
-            background: 'rgba(255, 255, 255, 0.05)',
+            background: 'rgba(255, 255, 255, 0.85)',
+            border: '1px solid rgba(203, 213, 225, 0.7)',
             padding: '0.8rem 1.2rem',
             borderRadius: '10px',
             marginBottom: '1.5rem',
@@ -60,20 +61,20 @@ export default function Journeys() {
             alignItems: 'center'
           }}>
             <div>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Passenger: </span>
-              <span style={{ fontWeight: '600', color: 'var(--secondary)' }}>{currentUser.name}</span>
+              <span style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '600' }}>Passenger: </span>
+              <span style={{ fontWeight: '700', color: '#0F172A' }}>{currentUser.name}</span>
             </div>
-            <span style={{ fontSize: '0.8rem', color: 'var(--success)' }}>☁️ Cloud Sync Active</span>
+            <span style={{ fontSize: '0.8rem', color: '#059669', fontWeight: '700' }}>☁️ Cloud Sync Active</span>
           </div>
         )}
 
         {loading ? (
           <div className="loader" style={{ margin: '3rem auto' }}></div>
         ) : journeys.length === 0 ? (
-          <div style={{ textAlign: 'center', padding: '3rem 1rem', color: 'var(--text-muted)' }}>
+          <div style={{ textAlign: 'center', padding: '3rem 1rem', color: '#475569' }}>
             <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>🚆</div>
-            <h3>No Journeys Recorded Yet</h3>
-            <p style={{ margin: '0.5rem 0 1.5rem', fontSize: '0.95rem' }}>
+            <h3 style={{ color: '#0F172A', fontWeight: '700' }}>No Journeys Recorded Yet</h3>
+            <p style={{ margin: '0.5rem 0 1.5rem', fontSize: '0.95rem', color: '#475569', fontWeight: '500' }}>
               Search for any train and activate destination alerts to see your journeys listed here.
             </p>
             <button className="search-btn" onClick={() => navigate('/')}>
@@ -99,33 +100,33 @@ export default function Journeys() {
               >
                 <div>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.3rem' }}>
-                    <span style={{ fontWeight: 'bold', color: 'var(--secondary)', fontSize: '1.1rem' }}>
+                    <span style={{ fontWeight: '700', color: '#0284c7', fontSize: '1.1rem' }}>
                       🚆 {j.trainNumber}
                     </span>
                     <span style={{
                       fontSize: '0.75rem',
                       padding: '2px 8px',
                       borderRadius: '4px',
-                      fontWeight: '600',
-                      background: j.status === 'completed' ? 'rgba(32, 201, 151, 0.2)' : 'rgba(74, 144, 226, 0.2)',
-                      color: j.status === 'completed' ? 'var(--success)' : 'var(--primary)'
+                      fontWeight: '700',
+                      background: j.status === 'completed' ? 'rgba(5, 150, 105, 0.15)' : 'rgba(2, 132, 199, 0.15)',
+                      color: j.status === 'completed' ? '#047857' : '#0369a1'
                     }}>
                       {j.status ? j.status.toUpperCase() : 'ACTIVE'}
                     </span>
                   </div>
                   
-                  <div style={{ fontSize: '0.95rem', color: '#fff', marginBottom: '0.4rem' }}>
+                  <div style={{ fontSize: '0.95rem', color: '#0F172A', fontWeight: '600', marginBottom: '0.4rem' }}>
                     {j.trainName || 'Express Train'}
                   </div>
 
-                  <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
+                  <div style={{ fontSize: '0.85rem', color: '#475569', fontWeight: '500' }}>
                     <span>📍 {j.boardingStation}</span>
                     <span style={{ margin: '0 0.5rem' }}>→</span>
-                    <span style={{ color: 'var(--primary)', fontWeight: '600' }}>🏁 {j.destinationStation}</span>
+                    <span style={{ color: '#0284c7', fontWeight: '700' }}>🏁 {j.destinationStation}</span>
                   </div>
 
                   {j.alertDistance && (
-                    <div style={{ fontSize: '0.75rem', color: '#a0aec0', marginTop: '0.3rem' }}>
+                    <div style={{ fontSize: '0.75rem', color: '#475569', fontWeight: '500', marginTop: '0.3rem' }}>
                       🔔 Alert Threshold: {j.alertDistance} km
                     </div>
                   )}
@@ -136,12 +137,13 @@ export default function Journeys() {
                     type="button"
                     onClick={(e) => handleDelete(j.id, e)}
                     style={{
-                      background: 'transparent',
-                      border: '1px solid rgba(255, 107, 107, 0.4)',
-                      color: '#ff8e8e',
+                      background: '#fff',
+                      border: '1px solid #dc2626',
+                      color: '#dc2626',
                       borderRadius: '6px',
                       padding: '0.3rem 0.6rem',
                       fontSize: '0.8rem',
+                      fontWeight: '600',
                       cursor: 'pointer'
                     }}
                     title="Delete Record"

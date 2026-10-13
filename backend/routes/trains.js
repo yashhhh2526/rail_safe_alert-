@@ -8,6 +8,7 @@ const fs = require('fs');
 const path = require('path');
 const demoTrains = require('../data/demoTrains');
 const { processTrainRouteDistances } = require('../services/railwayDistanceService');
+const { getAlternateTravelOptions } = require('../services/alternativeTravelService');
 
 function toIsoIST(timeStr, baseDateStr = null) {
   if (!timeStr) return null;
@@ -495,6 +496,59 @@ router.get('/searchByRoute', async (req, res) => {
   }
 
   res.json(results);
+});
+
+/**
+ * GET /api/trains/alternatives
+ * Returns multi-modal alternative travel options (Trains, Buses, Cabs, Flights)
+ * Query parameters:
+ *  - from: string (origin station name or code, required)
+ *  - to: string (destination station name or code, required)
+ *  - distance: number (distance in km, optional)
+ *  - currentTrain: string (current train number to exclude, optional)
+ */
+router.get('/alternatives', async (req, res) => {
+  const { from, to, distance, currentTrain } = req.query;
+
+  // Query parameter validation
+  if (!from || !String(from).trim()) {
+    return res.status(400).json({
+      success: false,
+      msg: 'Missing required query parameter: "from" station is required.'
+    });
+  }
+
+  if (!to || !String(to).trim()) {
+    return res.status(400).json({
+      success: false,
+      msg: 'Missing required query parameter: "to" station is required.'
+    });
+  }
+
+  const cleanFrom = String(from).trim();
+  const cleanTo = String(to).trim();
+  const parsedDistance = distance !== undefined && distance !== null && !isNaN(parseFloat(distance))
+    ? Math.max(0, parseFloat(distance))
+    : null;
+  const cleanCurrentTrain = currentTrain ? String(currentTrain).trim() : null;
+
+  try {
+    const alternativeData = await getAlternateTravelOptions(cleanFrom, cleanTo, parsedDistance, {
+      currentTrainNumber: cleanCurrentTrain
+    });
+
+    return res.json({
+      success: true,
+      data: alternativeData
+    });
+  } catch (error) {
+    console.error(`[Alternative Travel Error] ${cleanFrom} -> ${cleanTo}:`, error.message);
+    return res.status(500).json({
+      success: false,
+      msg: 'Failed to retrieve alternate travel options. Please try again.',
+      error: error.message
+    });
+  }
 });
 
 router.get('/:trainNumber/live', async (req, res) => {

@@ -78,44 +78,45 @@ function StationTimelineNode({
               </span>
               <div className="status-badge" style={{ 
                 fontSize: '0.65rem', padding: '2px 6px', borderRadius: '4px', fontWeight: 'bold',
-                backgroundColor: station.status === 'CURRENT' ? '#2196F3' : station.status === 'PASSED' ? '#4A90E2' : 'rgba(255,255,255,0.08)',
-                color: station.status === 'CURRENT' || station.status === 'PASSED' ? '#fff' : '#888',
+                backgroundColor: station.status === 'CURRENT' ? '#0284c7' : station.status === 'PASSED' ? '#0369a1' : 'rgba(100, 116, 139, 0.12)',
+                color: station.status === 'CURRENT' || station.status === 'PASSED' ? '#ffffff' : '#475569',
+                border: station.status === 'CURRENT' || station.status === 'PASSED' ? 'none' : '1px solid rgba(100, 116, 139, 0.25)',
                 display: 'inline-block'
               }}>
                 {station.status || (isCurrent ? 'CURRENT' : (isPast ? 'PASSED' : 'UPCOMING'))}
               </div>
             </div>
-            <div style={{ fontSize: '0.78rem', color: '#50E3C2', fontWeight: '600' }}>
+            <div style={{ fontSize: '0.78rem', color: '#0f766e', fontWeight: '700' }}>
               {fmtOrigin} km
             </div>
           </div>
         </div>
 
         {/* Real Railway Distance Details */}
-        <div className="station-distances" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', fontSize: '0.72rem', color: '#a0aec0', marginTop: '4px', marginBottom: '4px', alignItems: 'center' }}>
+        <div className="station-distances" style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', fontSize: '0.72rem', color: '#475569', fontWeight: '500', marginTop: '4px', marginBottom: '4px', alignItems: 'center' }}>
           <span>📍 {fmtPrev} km from previous</span>
           <span>•</span>
           <span>🚩 {fmtOrigin} km from origin</span>
           <span>•</span>
-          <span style={{ color: '#50E3C2', fontWeight: '500' }}>🏁 {fmtRem} km to destination</span>
+          <span style={{ color: '#0f766e', fontWeight: '700' }}>🏁 {fmtRem} km to destination</span>
         </div>
 
         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '4px', paddingRight: '10px' }}>
           <div>
             {station.scheduledArrival && (
-              <div style={{ fontSize: '0.75rem', color: '#aaa' }}>
+              <div style={{ fontSize: '0.75rem', color: '#475569', fontWeight: '600' }}>
                 {isNonHalt ? 'Passage: ' : 'Sch Arr: '}{formatTimeWithContext(station.scheduledArrival)}
               </div>
             )}
             {(station.status === 'PASSED' || isPast) ? (
               (station.actualArrival || station.actualDeparture || station.expectedArrival) && (
-                <div style={{ fontSize: '0.75rem', color: '#81E6D9' }}>
+                <div style={{ fontSize: '0.75rem', color: '#0f766e', fontWeight: '700' }}>
                   Act Arr: {formatTimeWithContext(station.actualArrival || station.actualDeparture || station.expectedArrival)}
                 </div>
               )
             ) : (
               (station.expectedArrival || station.scheduledArrival) && (
-                <div style={{ fontSize: '0.75rem', color: '#ddd' }}>
+                <div style={{ fontSize: '0.75rem', color: '#0F172A', fontWeight: '600' }}>
                   Exp Arr: {formatTimeWithContext(station.expectedArrival || calculateLiveETA(station, displayDelay))}
                 </div>
               )
@@ -126,7 +127,7 @@ function StationTimelineNode({
               <div style={{ fontSize: '0.75rem', color: 'var(--primary)', fontWeight: 'bold' }}>Train is here!</div>
             )}
             {station.delayMinutes > 0 && (
-              <div style={{ fontSize: '0.75rem', fontWeight: 'bold', color: '#FF6B6B' }}>
+              <div style={{ fontSize: '0.75rem', fontWeight: 'bold', color: '#dc2626' }}>
                 +{station.delayMinutes}m
               </div>
             )}
