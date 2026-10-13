@@ -125,8 +125,14 @@ export default function Journeys() {
                     <span style={{ color: '#0284c7', fontWeight: '700' }}>🏁 {j.destinationStation}</span>
                   </div>
 
+                  {j.pnr && (
+                    <div style={{ fontSize: '0.8rem', color: '#0284c7', fontWeight: '700', marginTop: '0.2rem' }}>
+                      🎫 PNR: {j.pnr} {j.fare ? `• Fare: ₹${Number(j.fare).toFixed(2)}` : ''}
+                    </div>
+                  )}
+
                   {j.alertDistance && (
-                    <div style={{ fontSize: '0.75rem', color: '#475569', fontWeight: '500', marginTop: '0.3rem' }}>
+                    <div style={{ fontSize: '0.75rem', color: '#475569', fontWeight: '500', marginTop: '0.2rem' }}>
                       🔔 Alert Threshold: {j.alertDistance} km
                     </div>
                   )}

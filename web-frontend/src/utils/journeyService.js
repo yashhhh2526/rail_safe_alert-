@@ -1,11 +1,25 @@
-import { API_BASE_URL } from '../config/api';
-import { getToken } from './authService';
+import { API_BASE_URL } from '../config/api.js';
+import { getToken } from './authService.js';
 
 const LOCAL_JOURNEYS_KEY = 'railSafe_localJourneys';
 
+function getStorage() {
+  if (typeof localStorage !== 'undefined') return localStorage;
+  if (!globalThis._mockStorage) {
+    globalThis._mockStorage = {
+      _data: {},
+      getItem(k) { return this._data[k] ?? null; },
+      setItem(k, v) { this._data[k] = String(v); },
+      removeItem(k) { delete this._data[k]; },
+      clear() { this._data = {}; }
+    };
+  }
+  return globalThis._mockStorage;
+}
+
 export function getLocalJourneys() {
   try {
-    const raw = localStorage.getItem(LOCAL_JOURNEYS_KEY);
+    const raw = getStorage().getItem(LOCAL_JOURNEYS_KEY);
     return raw ? JSON.parse(raw) : [];
   } catch {
     return [];
@@ -14,6 +28,7 @@ export function getLocalJourneys() {
 
 export function saveLocalJourney(journey) {
   try {
+    const storage = getStorage();
     const existing = getLocalJourneys();
     const newRecord = {
       id: journey.id || Date.now(),
@@ -23,10 +38,13 @@ export function saveLocalJourney(journey) {
       destinationStation: journey.destinationStation,
       alertDistance: journey.alertDistance || 5,
       status: journey.status || 'ongoing',
+      pnr: journey.pnr || null,
+      fare: journey.fare !== undefined ? journey.fare : null,
+      distanceKm: journey.distanceKm !== undefined ? journey.distanceKm : null,
       createdAt: new Date().toISOString()
     };
-    const updated = [newRecord, ...existing.filter(j => j.trainNumber !== journey.trainNumber)].slice(0, 15);
-    localStorage.setItem(LOCAL_JOURNEYS_KEY, JSON.stringify(updated));
+    const updated = [newRecord, ...existing.filter(j => j.id !== newRecord.id && j.trainNumber !== journey.trainNumber)].slice(0, 15);
+    storage.setItem(LOCAL_JOURNEYS_KEY, JSON.stringify(updated));
     return newRecord;
   } catch (err) {
     console.warn('Error saving local journey:', err);
@@ -64,8 +82,10 @@ export async function createJourney(journeyData) {
 
 export async function fetchUserJourneys() {
   const token = getToken();
+  const localList = getLocalJourneys();
+
   if (!token) {
-    return getLocalJourneys();
+    return localList;
   }
 
   try {
@@ -79,34 +99,52 @@ export async function fetchUserJourneys() {
     if (response.ok) {
       const data = await response.json();
       if (Array.isArray(data.journeys)) {
-        return data.journeys;
+        // Merge with local records
+        const combined = [...data.journeys];
+        localList.forEach(local => {
+          if (!combined.some(c => c.trainNumber === local.trainNumber && c.id === local.id)) {
+            combined.push(local);
+          }
+        });
+        return combined;
       }
     }
-    return getLocalJourneys();
+    return localList;
   } catch (err) {
-    console.warn('Error fetching journeys from backend:', err);
-    return getLocalJourneys();
+    console.warn('Backend journey fetch notice (falling back to local list):', err.message);
+    return localList;
   }
 }
 
 export async function deleteJourneyRecord(id) {
-  // Delete from local
   try {
-    const local = getLocalJourneys().filter(j => j.id !== id);
-    localStorage.setItem(LOCAL_JOURNEYS_KEY, JSON.stringify(local));
-  } catch (e) {
-    console.warn('Local delete notice:', e);
+    const storage = getStorage();
+    const existing = getLocalJourneys();
+    const filtered = existing.filter(j => j.id !== id);
+    storage.setItem(LOCAL_JOURNEYS_KEY, JSON.stringify(filtered));
+  } catch (err) {
+    console.warn('Error deleting local journey:', err);
   }
 
   const token = getToken();
-  if (token) {
-    try {
-      await fetch(`${API_BASE_URL}/api/journey/${id}`, {
-        method: 'DELETE',
-        headers: { 'Authorization': `Bearer ${token}` }
-      });
-    } catch (err) {
-      console.warn('Backend delete notice:', err);
-    }
+  if (!token) return;
+
+  try {
+    await fetch(`${API_BASE_URL}/api/journey/${id}`, {
+      method: 'DELETE',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
+  } catch (err) {
+    console.warn('Backend journey delete notice:', err.message);
   }
 }
+
+export default {
+  getLocalJourneys,
+  saveLocalJourney,
+  createJourney,
+  fetchUserJourneys,
+  deleteJourneyRecord
+};

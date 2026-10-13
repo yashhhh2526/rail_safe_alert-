@@ -55,3 +55,12 @@ export function applyTheme(themeName) {
     root.removeAttribute('data-theme');
   }
 }
+
+// Re-export Wallet helpers for service compatibility
+export {
+  getWalletBalance,
+  updateWalletBalance,
+  deductWalletBalance,
+  formatWalletBalance
+} from './authService.js';
+
